@@ -298,49 +298,29 @@ details.acc[open] summary .chev { transform: rotate(45deg); }
  </div>
 </section>
 
-<!-- OUTCOMES -->
+<!-- OUTCOMES + VOICES (unified) -->
+<style>
+.tq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;text-align:right;margin-top:6px}
+.tq-card{padding:22px 22px;background:#fff;border:1px solid var(--light-border);border-radius:16px;box-shadow:0 6px 20px rgba(26,39,68,.05);transition:.3s}
+.tq-card:hover{transform:translateY(-3px);border-color:rgba(188,160,87,.3)}
+.tq-mark{font-family:var(--head-font);font-size:40px;color:rgba(188,160,87,.55);line-height:.5;display:block;height:20px}
+.tq-text{font-size:14.5px;line-height:1.6;color:var(--light-text);font-weight:500}
+@media(max-width:880px){.tq-grid{grid-template-columns:1fr}}
+</style>
 <section class="light-section alt">
  <div class="light-wrap">
   <div class="light-eyebrow">// מה לוקחים מהמסע</div>
   <h2 class="light-h2">מה המשתתפים <span class="orange">לוקחים איתם</span></h2>
-  <p class="light-intro">לא עוד יום עיון שנשכח למחרת. <em>שינוי שנשאר</em> - תחושת שליטה, ראש פתוח לכיוונים חדשים, וצעדים שאפשר ליישם כבר באותו ערב.</p>
-  <div class="does-grid">
-   <div class="does-card fadeup-ready" style="--delay:0s"><div class="does-emoji">🧭</div><div class="does-h3">שליטה במקום חוסר אונים</div><div class="does-text">במקום להרגיש שהחיים פשוט קורים להם, המשתתפים מתחילים להבין שיש להם את היכולת לנווט את הספינה ולבחור את הדרך.</div></div>
-   <div class="does-card fadeup-ready" style="--delay:.08s"><div class="does-emoji">💬</div><div class="does-h3">שפה משותפת</div><div class="does-text">כלים לדבר על כסף בגובה העיניים - כי כל החלטה כלכלית היא קודם כל החלטה רגשית.</div></div>
-   <div class="does-card fadeup-ready" style="--delay:.16s"><div class="does-emoji">💡</div><div class="does-h3">לראות שאפשר</div><div class="does-text">פתיחת הראש לכיוונים שלא חשבו עליהם, והפחתת החשש - התחושה שזה בהישג יד, גם אם מתחילים בצעד קטן.</div></div>
-   <div class="does-card fadeup-ready" style="--delay:.24s"><div class="does-emoji">⚓</div><div class="does-h3">חוסן לטווח ארוך</div><div class="does-text">לא טיפ חולף, אלא יכולת שנשארת - הרגלים וכלים שממשיכים לעבוד גם כשהסדנה נגמרת.</div></div>
+  <p class="light-intro">לא עוד יום עיון שנשכח למחרת. שינוי שנשאר - תחושת שליטה, ראש פתוח לכיוונים חדשים, וצעדים שאפשר ליישם כבר באותו ערב. וכך זה נשמע מהמשתתפים עצמם:</p>
+  <div class="tq-grid">
+   <div class="tq-card fadeup-ready" style="--delay:0s"><span class="tq-mark">"</span><div class="tq-text">לפני שמזמינים באינטרנט - מחכים 24 שעות, ובודקים אם עדיין צריך.</div></div>
+   <div class="tq-card fadeup-ready" style="--delay:.06s"><span class="tq-mark">"</span><div class="tq-text">כשחושבים על חלום - מפרקים אותו עד הפרטים הקטנים.</div></div>
+   <div class="tq-card fadeup-ready" style="--delay:.12s"><span class="tq-mark">"</span><div class="tq-text">ידעתי דברים, אבל כאן קיבלתי משהו מוחשי לעשות.</div></div>
+   <div class="tq-card fadeup-ready" style="--delay:.18s"><span class="tq-mark">"</span><div class="tq-text">להסתכל על קנייה לפי כמה שעות עבודה היא שווה.</div></div>
+   <div class="tq-card fadeup-ready" style="--delay:.24s"><span class="tq-mark">"</span><div class="tq-text">אהבתי שהיו שיחות אישיות, שמיפו לכל אחד את הדרך.</div></div>
+   <div class="tq-card fadeup-ready" style="--delay:.3s"><span class="tq-mark">"</span><div class="tq-text">לשים לב למה שאני קונה, ולהיות יותר על העניינים.</div></div>
   </div>
  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<style>
-.tst{position:relative;z-index:1;max-width:1140px;margin:0 auto;padding:96px 48px;text-align:center}
-.tst h2{font-family:var(--head-font);font-weight:900;font-size:clamp(28px,4vw,46px);color:var(--white);margin-bottom:12px}
-.tst h2 .gold{background:linear-gradient(120deg,var(--orange),var(--amber));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.tst .lead{color:var(--muted);font-size:16px;margin:0 auto 46px;max-width:660px;line-height:1.6}
-.tst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:right}
-.tst-card{padding:28px 26px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:18px;transition:.35s}
-.tst-card:hover{background:rgba(188,160,87,.06);border-color:rgba(188,160,87,.2);transform:translateY(-4px)}
-.tst-mark{font-family:var(--head-font);font-size:46px;color:rgba(188,160,87,.4);line-height:.6;display:block;height:24px}
-.tst-quote{font-size:15.5px;line-height:1.65;color:rgba(228,233,242,.92);font-weight:500}
-.tst-attr{margin-top:15px;font-size:12.5px;color:var(--amber);font-weight:600}
-.tst-note{margin-top:34px;font-size:13px;color:var(--muted)}
-@media(max-width:880px){.tst-grid{grid-template-columns:1fr}.tst{padding:70px 22px}}
-</style>
-<section class="tst" id="testimonials">
- <div class="section-label" style="text-align:center">// בלשון המשתתפים</div>
- <h2>מה הם לקחו <span class="gold">איתם</span></h2>
- <p class="lead">ציטוטים אמיתיים ממשתתפי הפיילוט "העתיד בידיים שלנו" (נוער י-יב, נעורי גבולות), לשאלת הסיום: "מה את/ה לוקח/ת מהסדנה?"</p>
- <div class="tst-grid">
-  <div class="tst-card fadeup-ready" style="--delay:0s"><span class="tst-mark">"</span><div class="tst-quote">לפני שמזמינים באינטרנט - לחכות 24 שעות, ולראות אם עדיין צריך את זה.</div><div class="tst-attr">משתתף.ת · נוער י-יב</div></div>
-  <div class="tst-card fadeup-ready" style="--delay:.08s"><span class="tst-mark">"</span><div class="tst-quote">כשחושבים על חלום או מטרה - לפרק אותו עד הפרטים הקטנים, ולתכנן.</div><div class="tst-attr">משתתף.ת · נוער י-יב</div></div>
-  <div class="tst-card fadeup-ready" style="--delay:.16s"><span class="tst-mark">"</span><div class="tst-quote">ידעתי דברים, אבל כאן קיבלתי משהו מוחשי לעשות - יותר עומק.</div><div class="tst-attr">משתתף.ת · נוער י-יב</div></div>
-  <div class="tst-card fadeup-ready" style="--delay:.24s"><span class="tst-mark">"</span><div class="tst-quote">להסתכל על קנייה לפי כמה שעות עבודה היא שווה - אם זה באמת כדאי לי.</div><div class="tst-attr">משתתף.ת · נוער י-יב</div></div>
-  <div class="tst-card fadeup-ready" style="--delay:.32s"><span class="tst-mark">"</span><div class="tst-quote">אהבתי מאוד שהיו שיחות אישיות, כך שאפשר למפות לכל אחד את הדרך.</div><div class="tst-attr">איתמר רבין · משתתף</div></div>
-  <div class="tst-card fadeup-ready" style="--delay:.4s"><span class="tst-mark">"</span><div class="tst-quote">להיות יותר "על הדברים" - לשים לב למה שאני קונה, ולהתעדכן.</div><div class="tst-attr">משתתף.ת · נוער י-יב</div></div>
- </div>
- <p class="tst-note">משובים אמיתיים משאלוני הסיום של הסדנה. שמות נשמרים בהסכמה.</p>
 </section>
 
 <!-- AUDIENCES -->
@@ -353,7 +333,7 @@ details.acc[open] summary .chev { transform: rotate(45deg); }
    <div class="aud-card fadeup-ready" style="--delay:0s"><span class="aud-emoji">👩</span><div class="aud-h3">נשים</div><div class="aud-text">עצמאות כלכלית, ביטחון בקבלת החלטות ושבירת הטאבו סביב כסף.</div></div>
    <div class="aud-card fadeup-ready" style="--delay:.05s"><span class="aud-emoji">🎒</span><div class="aud-h3">צעירים (24-35)</div><div class="aud-text">הכסף הראשון והיציאה לעצמאות - בלי ליפול למלכודות אשראי ואוברדרפט.</div></div>
    <div class="aud-card fadeup-ready" style="--delay:.1s"><span class="aud-emoji">🔄</span><div class="aud-h3">גרושים וגרושות</div><div class="aud-text">בנייה מחדש של בסיס כלכלי אחרי פרידה, ומעבר לניהול עצמאי ובטוח.</div></div>
-   <div class="aud-card fadeup-ready" style="--delay:.15s"><span class="aud-emoji">🎓</span><div class="aud-h3">בני נוער (י-יב)</div><div class="aud-text">הרגלים נכונים לפני היציאה לחיים - מבוסס על הפיילוט המוכח "העתיד בידיים שלנו".</div></div>
+   <div class="aud-card fadeup-ready" style="--delay:.15s"><span class="aud-emoji">🎓</span><div class="aud-h3">בני נוער (י-יב)</div><div class="aud-text">הרגלים נכונים לפני היציאה לחיים העצמאיים, מתוך ניסיון בהנחיית סדנאות לנוער.</div></div>
    <div class="aud-card fadeup-ready" style="--delay:.2s"><span class="aud-emoji">🍎</span><div class="aud-h3">אנשי ונשות חינוך</div><div class="aud-text">כלים לעצמם, ויכולת להעביר חוסן כלכלי הלאה לתלמידים ולהורים.</div></div>
    <div class="aud-card fadeup-ready" style="--delay:.25s"><span class="aud-emoji">🤝</span><div class="aud-h3">עו"סיות ואנשי מקצוע</div><div class="aud-text">שפה וכלים מעשיים לעבודה עם מטופלים ומשפחות במצוקה כלכלית.</div></div>
    <div class="aud-card fadeup-ready" style="--delay:.3s"><span class="aud-emoji">🌱</span><div class="aud-h3">שנת שירות ושירות לאומי</div><div class="aud-text">ניהול מלגה ודמי קיום, ובניית הרגלים כלכליים בריאים כבר עכשיו.</div></div>
@@ -407,7 +387,7 @@ details.acc[open] summary .chev { transform: rotate(45deg); }
    <div class="light-eyebrow">// מי מעבירה</div>
    <div class="about-name">עינב ליבנה</div>
    <div class="about-role">מאמנת לחוסן כלכלי · אשת חינוך · מנחת קבוצות</div>
-   <p class="about-text">מעל <strong>20 שנה</strong> בחינוך, בהובלת פרויקטים חברתיים ובעבודה קהילתית במועצה אזורית. השנים האחרונות לימדו את כולנו מה קורה כשהקרקע נשמטת מתחת לרגליים - ומשם אני מלווה אנשים לחזור לשליטה, לבהירות וליכולת לחלום. הסדנה הקבוצתית נולדה מהפיילוט המוכח <strong>"העתיד בידיים שלנו"</strong>, ומבוססת על תהליך אימון אישי שעובד בשטח. בעלת עוסק מורשה, מקיבוץ גבולות.</p>
+   <p class="about-text">מעל <strong>20 שנה</strong> בחינוך, בהובלת פרויקטים חברתיים ובעבודה קהילתית - מתוך היכרות קרובה עם קהילות, עם גילאים שונים ועם האתגרים שהם מביאים. הסדנה נולדה מההיכרות הזו, וגם מהסיפור האישי שלי: השינוי בדרך שבה אני מתנהלת עם כסף נתן לי ודאות דווקא בתקופה בלי ודאות. הוא איפשר לי לחזור לחלום, ובעיקר להבין שיש לי את הכלים להגשים - ולבנות תכנית מסודרת לדרך. את זה אני מביאה היום ליחידים, לזוגות, לקבוצות ולקהילות.</p>
   </div>
  </div>
 </section>
@@ -423,7 +403,7 @@ details.acc[open] summary .chev { transform: rotate(45deg); }
    <a href="#" onclick="waLink(event)" class="cbtn primary">💬 שיחה בוואטסאפ</a>
    <a href="mailto:einav.livne@gmail.com?subject=סדנת חוסן כלכלי - רשות" class="cbtn ghost">✉️ שליחת מייל</a>
   </div>
-  <div class="contact-direct">עינב ליבנה · <a href="tel:0552704742">055-270-4742</a> · <a href="mailto:einav.livne@gmail.com">einav.livne@gmail.com</a></div>
+  <div class="contact-direct">עינב ליבנה · <a href="tel:0547919111">054-791-9111</a> · <a href="mailto:einav.livne@gmail.com">einav.livne@gmail.com</a></div>
  </div>
 </section>
 
@@ -431,7 +411,7 @@ details.acc[open] summary .chev { transform: rotate(45deg); }
 <footer class="site-footer">
  <img class="footer-logo" src="logo-full.png" alt="בדרך שלך · עינב ליבנה" onerror="this.style.display='none'">
  <div class="footer-slogan">לחלום · להבין · לתכנן · להגשים</div>
- <div class="footer-meta">עינב ליבנה · מאמנת לחוסן כלכלי · קיבוץ גבולות<br><a href="tel:0552704742">055-270-4742</a> · <a href="mailto:einav.livne@gmail.com">einav.livne@gmail.com</a></div>
+ <div class="footer-meta">עינב ליבנה · מאמנת לחוסן כלכלי · קיבוץ גבולות<br><a href="tel:0547919111">054-791-9111</a> · <a href="mailto:einav.livne@gmail.com">einav.livne@gmail.com</a></div>
 </footer>
 
 <script>
