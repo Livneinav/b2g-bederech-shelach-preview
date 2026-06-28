@@ -318,7 +318,7 @@ details.acc[open] summary .chev { transform: rotate(45deg); }
    <div class="tq-card fadeup-ready" style="--delay:.12s"><span class="tq-mark">"</span><div class="tq-text">ידעתי דברים, אבל כאן קיבלתי משהו מוחשי לעשות.</div></div>
    <div class="tq-card fadeup-ready" style="--delay:.18s"><span class="tq-mark">"</span><div class="tq-text">הבנתי שצריך להשקיע, ולחקור את הנושא לעומק.</div></div>
    <div class="tq-card fadeup-ready" style="--delay:.24s"><span class="tq-mark">"</span><div class="tq-text">אהבתי שהיו שיחות אישיות, שמיפו לכל אחד את הדרך.</div></div>
-   <div class="tq-card fadeup-ready" style="--delay:.3s"><span class="tq-mark">"</span><div class="tq-text">לפני קנייה - לעצור, ולבדוק אם באמת צריך.</div></div>
+   <div class="tq-card fadeup-ready" style="--delay:.3s"><span class="tq-mark">"</span><div class="tq-text">לפני קנייה - לבדוק כמה שעות עבודה היא שווה, ואם זה כדאי.</div></div>
   </div>
  </div>
 </section>
@@ -387,7 +387,7 @@ details.acc[open] summary .chev { transform: rotate(45deg); }
    <div class="light-eyebrow">// מי מעבירה</div>
    <div class="about-name">עינב ליבנה</div>
    <div class="about-role">מאמנת לחוסן כלכלי · אשת חינוך · מנחת קבוצות</div>
-   <p class="about-text">מעל <strong>20 שנה</strong> בחינוך, בהובלת פרויקטים חברתיים ובעבודה קהילתית - מתוך היכרות קרובה עם קהילות, עם גילאים שונים ועם האתגרים שהם מביאים. הסדנה נולדה מההיכרות הזו, וגם מהסיפור האישי שלי: השינוי בדרך שבה אני מתנהלת עם כסף נתן לי ודאות דווקא בתקופה בלי ודאות. הוא איפשר לי לחזור לחלום, ובעיקר להבין שיש לי את הכלים להגשים - ולבנות תוכנית מסודרת לדרך. את זה אני מביאה היום ליחידים, לזוגות, לקבוצות ולקהילות.</p>
+   <p class="about-text">מעל <strong>20 שנה</strong> בחינוך, בהובלת פרויקטים חברתיים ובעבודה קהילתית. אחרי השבעה באוקטובר ליוויתי את הקהילה שלי דרך אחת התקופות הקשות שידענו, ומקרוב ראיתי מה חוסן באמת אומר - וכמה הכלכלי שזור בו. את הדרך הזו עברתי גם בעצמי: השינוי באופן שבו אני מתנהלת עם כסף נתן לי ודאות דווקא בתקופה בלי ודאות, החזיר אותי לחלום, ולהבין שיש לי את הכלים להגשים ולבנות תוכנית. את זה אני מביאה היום ליחידים, לזוגות, לקבוצות ולקהילות.</p>
   </div>
  </div>
 </section>
@@ -423,7 +423,7 @@ function waLink(e){ if(e) e.preventDefault(); var msg='היי עינב, הגעת
 /* TYPEWRITER */
 (function(){
  const el=document.getElementById('sub-promise-el'); if(!el) return;
- const fullHTML='סדנאות חוסן כלכלי מותאמות לקהל שלכם - לנוער, למשפחות, לצוותים ולקהילה. <strong>תהליך</strong> שבו אנשים לומדים, מרגישים שינוי, ו<span class="warm">חוזרים לאחוז בהגה</span>.';
+ const fullHTML='סדנאות וליווי בחוסן כלכלי, מותאמים לכל קהל בקהילה שלכם. אנשים יוצאים עם <strong>כלים מעשיים</strong>, ועם <span class="warm">תחושה אחרת לגמרי מול הכסף</span>.';
  function tk(h){const t=[];let i=0;while(i<h.length){if(h[i]==='<'){let j=h.indexOf('>',i);if(j===-1)j=h.length-1;t.push({t:'tag',v:h.slice(i,j+1)});i=j+1;}else{let j=h.indexOf('<',i);if(j===-1)j=h.length;t.push({t:'txt',v:h.slice(i,j)});i=j;}}return t;}
  const tokens=tk(fullHTML);let r='',ti=0,ci=0,cur=null;
  function rc(){if(cur)cur.remove();cur=document.createElement('span');cur.className='tw-cursor';cur.style.height='1em';el.appendChild(cur);}
