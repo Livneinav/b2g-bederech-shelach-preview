@@ -290,6 +290,17 @@ details.acc[open] summary .chev { transform: rotate(45deg); }
   <h2>המסע, ב<span class="gold">ארבעה מפגשים</span></h2>
   <p>מבנה שעובד בשטח - מהמקום שבו המשתתפים היום ועד שהם אוחזים בהגה. השדרה קבועה; התוכן והדגשים מותאמים לכל קהל.</p>
  </div>
+ <style>
+ .voyage-track{position:relative;height:46px;margin:0 6px 16px;z-index:1}
+ .voyage-line{position:absolute;top:60%;left:8px;right:8px;height:2px;background:linear-gradient(90deg,transparent,rgba(212,184,106,.45),transparent)}
+ .voyage-boat{position:absolute;top:60%;right:3%;width:36px;height:auto;transform:translate(50%,-72%);transition:right .12s linear;filter:drop-shadow(0 2px 6px rgba(0,0,0,.3))}
+ @media(max-width:880px){.voyage-boat{width:28px}}
+ </style>
+ <div class="voyage-track" aria-hidden="true">
+  <div class="voyage-line"></div>
+  <svg class="voyage-boat" viewBox="0 0 60 44"><path d="M8 30 L52 30 L45 40 L15 40 Z" fill="#d4b86a"/><rect x="29" y="8" width="1.6" height="22" fill="#d4b86a"/><path d="M31 10 L31 29 L46 29 Z" fill="#d4b86a" opacity=".9"/><path d="M28 12 L28 29 L15 29 Z" fill="#bca057" opacity=".75"/></svg>
+ </div>
+ <script>(function(){var sec=document.querySelector('.sessions'),boat=document.querySelector('.voyage-boat');if(!sec||!boat)return;function upd(){var r=sec.getBoundingClientRect(),vh=window.innerHeight,total=r.height+vh,seen=Math.min(Math.max(vh-r.top,0),total),p=total>0?seen/total:0;p=Math.min(Math.max(p,0),1);boat.style.right=(3+p*90)+'%';}window.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);upd();})();</script>
  <div class="session-grid">
   <div class="session-card fadeup-ready" style="--delay:0s"><div class="session-num">01</div><div class="session-station">🧭 המצפן הערכי</div><div class="session-h3">לאן אנחנו מפליגים</div><div class="session-text">חיבור הכסף לערכים ולחלומות. כשברור לאן רוצים להגיע, הכסף הופך מנטל לכלי שמשרת את החיים.</div></div>
   <div class="session-card fadeup-ready" style="--delay:.08s"><div class="session-num">02</div><div class="session-station">🗺️ מפת הסיכונים</div><div class="session-h3">לזהות את המוקשים</div><div class="session-text">זיהוי בורות ומלכודות - הלוואות, אשראי, מסגרת וריבית. מבינים את השטח לפני שיוצאים לדרך.</div></div>
@@ -387,7 +398,7 @@ details.acc[open] summary .chev { transform: rotate(45deg); }
    <div class="light-eyebrow">// מי מעבירה</div>
    <div class="about-name">עינב ליבנה</div>
    <div class="about-role">מאמנת לחוסן כלכלי · אשת חינוך · מנחת קבוצות</div>
-   <p class="about-text">מעל <strong>20 שנה</strong> בחינוך, בהובלת פרויקטים חברתיים ובעבודה קהילתית. אחרי השבעה באוקטובר ליוויתי את הקהילה שלי דרך אחת התקופות הקשות שידענו, ומקרוב ראיתי מה חוסן באמת אומר - וכמה הכלכלי שזור בו. את הדרך הזו עברתי גם בעצמי: השינוי באופן שבו אני מתנהלת עם כסף נתן לי ודאות דווקא בתקופה בלי ודאות, החזיר אותי לחלום, ולהבין שיש לי את הכלים להגשים ולבנות תוכנית. את זה אני מביאה היום ליחידים, לזוגות, לקבוצות ולקהילות.</p>
+   <p class="about-text">מעל <strong>20 שנה</strong> בחינוך, בהובלת פרויקטים חברתיים ובעבודה קהילתית. אחרי השבעה באוקטובר ליוויתי את הקהילה שלי דרך אחת התקופות הקשות שידענו, והבנתי עד כמה חוסן נבנה בכמה ערוצים יחד - והחוסן הכלכלי הוא אחד הכלים החזקים שבהם, שלא תמיד מקבל את המקום שמגיע לו. את הדרך הזו עברתי גם בעצמי: השינוי באופן שבו אני מתנהלת עם כסף נתן לי ודאות דווקא בתקופה בלי ודאות, החזיר אותי לחלום, ולהבין שיש לי את הכלים להגשים ולבנות תוכנית. את זה אני מביאה היום ליחידים, לזוגות, לקבוצות ולקהילות.</p>
   </div>
  </div>
 </section>
@@ -423,7 +434,7 @@ function waLink(e){ if(e) e.preventDefault(); var msg='היי עינב, הגעת
 /* TYPEWRITER */
 (function(){
  const el=document.getElementById('sub-promise-el'); if(!el) return;
- const fullHTML='סדנאות וליווי בחוסן כלכלי, מותאמים לכל קהל בקהילה שלכם. אנשים יוצאים עם <strong>כלים מעשיים</strong>, ועם <span class="warm">תחושה אחרת לגמרי מול הכסף</span>.';
+ const fullHTML='סדנאות וליווי בחוסן כלכלי, מותאמים לאוכלוסייה שלכם. כל משתתף יוצא עם <strong>כלים אמיתיים</strong>, ועם <span class="warm">ביטחון להמשיך בכוחות עצמו</span>.';
  function tk(h){const t=[];let i=0;while(i<h.length){if(h[i]==='<'){let j=h.indexOf('>',i);if(j===-1)j=h.length-1;t.push({t:'tag',v:h.slice(i,j+1)});i=j+1;}else{let j=h.indexOf('<',i);if(j===-1)j=h.length;t.push({t:'txt',v:h.slice(i,j)});i=j;}}return t;}
  const tokens=tk(fullHTML);let r='',ti=0,ci=0,cur=null;
  function rc(){if(cur)cur.remove();cur=document.createElement('span');cur.className='tw-cursor';cur.style.height='1em';el.appendChild(cur);}
