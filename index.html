@@ -1,230 +1,222 @@
 <!DOCTYPE html>
-<!-- ואן פייג' B2G · סדנאות וליווי לחוסן כלכלי לרשויות ומועצות · בדרך שלך · נבנה על Landing Kit -->
 <html lang="he" dir="rtl">
 <head>
-<meta name="robots" content="noindex,nofollow">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#1a2744">
-<title>חוסן כלכלי לקהילה · בדרך שלך · עינב ליבנה</title>
-<meta name="description" content="סדנאות קבוצתיות ותהליכים אישיים לחוסן כלכלי, מותאמים לכל קהל בקהילה - לרשויות, מועצות ומחלקות הרווחה. מהמיינדסט, דרך הידע, אל הפרקטיקה.">
+<title>בדרך שלך · חוסן כלכלי לרשויות ולקהילה · עינב ליבנה</title>
+<meta name="description" content="סדנאות וליווי חוסן כלכלי לרשויות, מועצות וארגונים - מותאם לקהל שלכם. תהליך אמיתי, לא עוד הרצאה.">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700;900&family=Heebo:wght@300;400;500;700;800;900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800;900&family=Frank+Ruhl+Libre:wght@500;700;900&display=swap');
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
 :root {
-  --brand-font: 'Heebo', system-ui, sans-serif;
-  --heading-font: 'Frank Ruhl Libre', Georgia, 'Times New Roman', serif;
+  --brand-font: 'Heebo', system-ui, sans-serif; --head-font: 'Frank Ruhl Libre', serif;
   --accent-rgb: 188,160,87; --accent2-rgb: 212,184,106; --orange2-rgb: 188,160,87;
- --orange: #bca057; --orange-2: #bca057; --amber: #d4b86a;
- --bg: #1a2744; --text: #E4E4F0; --muted: #8A93A8; --white: #FFFFFF;
- --border: rgba(255,255,255,0.07);
- --light-bg: #F8F2E4; --light-bg-2: #EFE7D4; --light-text: #33405a; --light-muted: #5C5C78;
- --light-border: rgba(13,13,20,0.08);
+  --orange: #bca057; --orange-2: #bca057; --amber: #d4b86a;
+  --bg: #1a2744; --text: #E4E9F2; --muted: #8C99B3; --white: #FFFFFF;
+  --border: rgba(255,255,255,0.075);
+  --light-bg: #F8F2E4; --light-bg-2: #F0E8D6; --light-text: #33405a; --light-muted: #5C6680;
+  --light-border: rgba(26,39,68,0.10);
 }
-
 html { scroll-behavior: smooth; }
 body { font-family: var(--brand-font), system-ui, sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+.brand-mark, h1.hero-h1, .story h2, .light-h2, .stat-num, .about-name, .sessions h2, .contact h2, .acc-wrap > h2 { font-family: var(--head-font), serif; }
 
 #scroll-progress { position: fixed; top: 0; left: 0; z-index: 999; height: 3px; width: 0%; background: linear-gradient(90deg, var(--orange), var(--amber)); transition: width .05s linear; pointer-events: none; }
 
-/* SCENE */
 .scene { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
-.orb-a { position: absolute; top: 40%; left: 50%; transform: translate(-50%,-50%); width: 1000px; height: 1000px; border-radius: 50%; background: radial-gradient(ellipse at center, rgba(var(--accent-rgb),.20) 0%, rgba(var(--orange2-rgb),.09) 28%, rgba(var(--accent-rgb),.03) 55%, transparent 70%); filter: blur(45px); animation: orb-a 8s ease-in-out infinite; }
-.orb-b { position: absolute; top: 44%; left: 50%; transform: translate(-50%,-50%); width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(ellipse at center, rgba(var(--accent2-rgb),.16) 0%, rgba(var(--accent-rgb),.07) 45%, transparent 70%); filter: blur(28px); animation: orb-b 5s ease-in-out infinite; }
+.orb-a { position: absolute; top: 40%; left: 50%; transform: translate(-50%,-50%); width: 1000px; height: 1000px; border-radius: 50%; background: radial-gradient(ellipse at center, rgba(var(--accent-rgb),.24) 0%, rgba(var(--orange2-rgb),.10) 28%, rgba(var(--accent-rgb),.03) 55%, transparent 70%); filter: blur(45px); animation: orb-a 8s ease-in-out infinite; }
+.orb-b { position: absolute; top: 44%; left: 50%; transform: translate(-50%,-50%); width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(ellipse at center, rgba(var(--accent2-rgb),.18) 0%, rgba(var(--accent-rgb),.08) 45%, transparent 70%); filter: blur(28px); animation: orb-b 5s ease-in-out infinite; }
 @keyframes orb-a { 0%,100%{opacity:.8;transform:translate(-50%,-50%) scale(1)} 50%{opacity:1;transform:translate(-50%,-50%) scale(1.07)} }
 @keyframes orb-b { 0%,100%{opacity:.75;transform:translate(-50%,-50%) scale(1)} 50%{opacity:1;transform:translate(-50%,-50%) scale(1.12)} }
 .ring { position: absolute; top: 40%; left: 50%; border-radius: 50%; }
-.ring-1 { width: 580px; height: 580px; transform: translate(-50%,-50%); border: 1px solid rgba(var(--accent-rgb),.10); animation: spin-fwd 24s linear infinite; }
-.ring-1::after { content: ''; position: absolute; top: -2px; left: 50%; width: 5px; height: 5px; border-radius: 50%; background: var(--amber); transform: translateX(-50%); box-shadow: 0 0 14px 5px var(--amber); }
-.ring-2 { width: 760px; height: 760px; transform: translate(-50%,-50%); border: 1px solid rgba(var(--accent-rgb),.06); animation: spin-rev 42s linear infinite; }
-.ring-3 { width: 950px; height: 950px; transform: translate(-50%,-50%); border: 1px solid rgba(var(--accent-rgb),.03); }
+.ring-1 { width: 580px; height: 580px; transform: translate(-50%,-50%); border: 1px solid rgba(var(--accent-rgb),.09); animation: spin-fwd 24s linear infinite; }
+.ring-1::after { content: ''; position: absolute; top: -2px; left: 50%; width: 5px; height: 5px; border-radius: 50%; background: var(--orange); transform: translateX(-50%); box-shadow: 0 0 14px 5px var(--orange); }
+.ring-2 { width: 760px; height: 760px; transform: translate(-50%,-50%); border: 1px solid rgba(var(--accent-rgb),.05); animation: spin-rev 42s linear infinite; }
+.ring-3 { width: 950px; height: 950px; transform: translate(-50%,-50%); border: 1px solid rgba(var(--accent-rgb),.025); }
 @keyframes spin-fwd { from{transform:translate(-50%,-50%) rotate(0deg)} to{transform:translate(-50%,-50%) rotate(360deg)} }
 @keyframes spin-rev { from{transform:translate(-50%,-50%) rotate(0deg)} to{transform:translate(-50%,-50%) rotate(-360deg)} }
 .scene-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(var(--accent-rgb),.022) 1px, transparent 1px), linear-gradient(90deg, rgba(var(--accent-rgb),.022) 1px, transparent 1px); background-size: 56px 56px; mask-image: radial-gradient(ellipse 72% 60% at 50% 40%, black 0%, transparent 100%); }
-.a-right { position: absolute; top: -15%; right: -22%; width: 850px; height: 850px; border-radius: 50%; background: radial-gradient(ellipse at center, rgba(var(--accent-rgb),.18) 0%, rgba(var(--accent-rgb),.06) 38%, transparent 68%); filter: blur(65px); animation: fl-r 11s ease-in-out infinite; }
-.a-left { position: absolute; top: 18%; left: -20%; width: 820px; height: 820px; border-radius: 50%; background: radial-gradient(ellipse at center, rgba(45,74,110,.34) 0%, rgba(26,39,68,.18) 38%, rgba(26,39,68,.05) 60%, transparent 74%); filter: blur(70px); animation: fl-l 15s ease-in-out infinite; }
-.a-btm { position: absolute; bottom: -8%; left: 15%; width: 680px; height: 680px; border-radius: 50%; background: radial-gradient(ellipse at center, rgba(var(--accent-rgb),.08) 0%, rgba(var(--orange2-rgb),.04) 50%, transparent 70%); filter: blur(58px); animation: fl-b 19s ease-in-out infinite; }
-@keyframes fl-r { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-35px,45px) scale(1.08)} }
-@keyframes fl-l { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(55px,35px) scale(1.09)} }
-@keyframes fl-b { 0%,100%{transform:translate(0,0)} 33%{transform:translate(-18px,-28px)} 66%{transform:translate(12px,12px)} }
+.a-right { position: absolute; top: -15%; right: -22%; width: 850px; height: 850px; border-radius: 50%; background: radial-gradient(ellipse at center, rgba(var(--accent-rgb),.18) 0%, rgba(var(--accent-rgb),.06) 38%, transparent 68%); filter: blur(65px); }
+.a-left { position: absolute; top: 18%; left: -20%; width: 820px; height: 820px; border-radius: 50%; background: radial-gradient(ellipse at center, rgba(45,74,110,.5) 0%, rgba(45,74,110,.22) 35%, transparent 72%); filter: blur(70px); }
+
+/* SAILBOAT */
+.horizon-boat{position:absolute;left:50%;bottom:6%;transform:translateX(-50%);z-index:1;width:min(230px,46vw);opacity:.55;pointer-events:none;animation:boat-bob 6.5s ease-in-out infinite}
+.horizon-boat svg{width:100%;height:auto;display:block}
+@keyframes boat-bob{0%,100%{transform:translateX(-50%) translateY(0) rotate(-1.2deg)}50%{transform:translateX(-50%) translateY(-10px) rotate(1.2deg)}}
 
 /* NAV */
-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 90; height: 66px; padding: 0 52px; display: flex; align-items: center; justify-content: space-between; backdrop-filter: blur(24px) saturate(160%); background: rgba(15,22,40,.92); border-bottom: 1px solid var(--border); }
-.nav-left { display: flex; align-items: center; gap: 14px; }
-.nav-logo { height: 38px; width: 38px; object-fit: contain; }
-.brand-mark { font-family: var(--brand-font), sans-serif; font-weight: 900; font-size: 20px; letter-spacing: .04em; background: linear-gradient(120deg, var(--white) 45%, var(--amber)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 90; height: 66px; padding: 0 52px; display: flex; align-items: center; justify-content: space-between; backdrop-filter: blur(24px) saturate(160%); background: rgba(26,39,68,.92); border-bottom: 1px solid var(--border); }
+.nav-left { display: flex; align-items: center; gap: 13px; }
+.nav-logo { width: 40px; height: 40px; object-fit: contain; background: rgba(248,242,228,.96); border-radius: 50%; padding: 3px; }
+.brand-mark { font-weight: 900; font-size: 22px; letter-spacing: .04em; background: linear-gradient(120deg, var(--white) 45%, var(--amber)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .nav-divider { width: 1px; height: 22px; background: var(--border); }
 .nav-sub { font-size: 11px; font-weight: 300; letter-spacing: .1em; color: var(--muted); }
 .nav-center { display: flex; align-items: center; gap: 8px; }
-.pill { padding: 6px 14px; border-radius: 100px; font-size: 11px; letter-spacing: .07em; font-weight: 400; border: 1px solid; display: flex; align-items: center; gap: 6px; }
-.pill-orange { border-color: rgba(var(--accent-rgb),.28); color: rgba(var(--accent2-rgb),.95); background: rgba(var(--accent-rgb),.07); }
-.nav-cta { background: linear-gradient(120deg, var(--orange) 0%, var(--amber) 100%); color: #1a2744; font-family: var(--brand-font), sans-serif; font-weight: 700; font-size: 14px; padding: 12px 26px; border-radius: 100px; text-decoration: none; letter-spacing: .02em; box-shadow: 0 4px 28px rgba(var(--accent-rgb),.3), inset 0 1px 0 rgba(255,255,255,.18); transition: all .25s; }
+.pill { padding: 6px 14px; border-radius: 100px; font-size: 11px; letter-spacing: .06em; font-weight: 400; border: 1px solid rgba(var(--accent-rgb),.32); color: rgba(var(--accent2-rgb),.95); background: rgba(var(--accent-rgb),.08); }
+.nav-cta { background: linear-gradient(120deg, var(--orange) 0%, var(--amber) 100%); color: #1a2744; font-weight: 700; font-size: 14px; padding: 12px 28px; border-radius: 100px; text-decoration: none; letter-spacing: .03em; box-shadow: 0 4px 28px rgba(var(--accent-rgb),.3); transition: all .25s; }
 .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 40px rgba(var(--accent-rgb),.42); }
 
 /* HERO */
-.hero { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 150px 32px 90px; overflow: hidden; }
-.hero-inner { max-width: 1000px; position: relative; z-index: 3; }
-.pre-head { display: inline-flex; align-items: center; gap: 10px; background: rgba(var(--accent-rgb),.08); border: 1px solid rgba(var(--accent-rgb),.24); border-radius: 100px; padding: 10px 24px; font-size: 13px; font-weight: 300; letter-spacing: .03em; color: rgba(var(--accent2-rgb),.95); margin-bottom: 30px; backdrop-filter: blur(10px); }
+.hero { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 150px 32px 140px; overflow: hidden; }
+.hero-inner { max-width: 940px; position: relative; z-index: 3; }
+.pre-head { display: inline-flex; align-items: center; gap: 10px; background: rgba(var(--accent-rgb),.09); border: 1px solid rgba(var(--accent-rgb),.28); border-radius: 100px; padding: 10px 24px; font-size: 13px; font-weight: 400; letter-spacing: .03em; color: rgba(var(--accent2-rgb),.95); margin-bottom: 34px; backdrop-filter: blur(10px); }
 .pre-dot { width:7px; height:7px; border-radius:50%; background:var(--amber); animation:blink 2s ease infinite; }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
-h1.hero-h1 { font-family: var(--heading-font); font-weight: 900; font-size: clamp(32px, 4.4vw, 60px); line-height: 1.18; letter-spacing: -.01em; margin-bottom: 24px; max-width: 1000px; margin-left: auto; margin-right: auto; text-wrap: balance; }
-.h1-solid { color: var(--white); display: inline; }
-.h1-warm { background: linear-gradient(120deg, var(--orange) 0%, var(--amber) 80%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: inline; }
-.sub-promise { font-size: clamp(17px,2.1vw,22px); font-weight: 400; line-height: 1.8; color: rgba(228,228,240,.82); max-width: 800px; margin: 0 auto 30px; min-height: 4.5em; }
-.sub-promise strong { color: var(--white); font-weight: 700; }
-.sub-promise .warm { color: var(--amber); font-weight: 700; }
+h1.hero-h1 { font-weight: 900; font-size: clamp(32px, 5vw, 58px); line-height: 1.2; letter-spacing: -.01em; margin-bottom: 22px; max-width: 880px; margin-left: auto; margin-right: auto; text-wrap: balance; }
+.h1-solid { color: var(--white); } .h1-warm { background: linear-gradient(120deg, var(--orange) 0%, var(--amber) 80%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.sub-promise { font-size: clamp(17px,2.2vw,21px); font-weight: 400; line-height: 1.78; color: rgba(228,233,242,.82); max-width: 720px; margin: 0 auto 32px; min-height: 4.6em; }
+.sub-promise strong { color: var(--white); font-weight: 700; } .sub-promise .warm { color: var(--amber); font-weight: 700; }
 .tw-cursor { display: inline-block; width: 2px; background: var(--amber); animation: tw-blink .7s step-end infinite; margin-right: 2px; vertical-align: text-bottom; }
 @keyframes tw-blink { 0%,100%{opacity:1} 50%{opacity:0} }
 .cta-group { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
-.cta-primary { background: linear-gradient(120deg, var(--orange) 0%, var(--amber) 100%); color: #1a2744; font-family: var(--brand-font), sans-serif; font-weight: 700; font-size: 17px; padding: 21px 44px; border-radius: 14px; text-decoration: none; letter-spacing: .02em; box-shadow: 0 0 56px rgba(var(--accent-rgb),.3), inset 0 1px 0 rgba(255,255,255,.18); transition: all .28s; position: relative; overflow: hidden; }
-.cta-primary::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,255,255,.16) 0%, transparent 55%); }
-.cta-primary::after { content: ''; position: absolute; top: 0; bottom: 0; left: -50%; width: 35%; background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,.32) 50%, transparent 100%); transform: skewX(-22deg); animation: shimmer-sweep 3.6s ease-in-out infinite; }
-@keyframes shimmer-sweep { 0% { left: -50%; } 60%, 100% { left: 130%; } }
-.cta-primary:hover { transform: translateY(-3px) scale(1.015); box-shadow: 0 0 80px rgba(var(--accent-rgb),.45); }
-.cta-secondary { color: var(--muted); font-size: 15px; font-weight: 400; text-decoration: none; display: flex; align-items: center; gap: 7px; padding: 21px 26px; border: 1px solid rgba(255,255,255,.1); border-radius: 14px; transition: all .25s; letter-spacing: .03em; backdrop-filter: blur(8px); }
+.cta-primary { background: linear-gradient(120deg, var(--orange) 0%, var(--amber) 100%); color: #1a2744; font-weight: 700; font-size: 17px; padding: 20px 44px; border-radius: 14px; text-decoration: none; box-shadow: 0 0 56px rgba(var(--accent-rgb),.30); transition: all .28s; position: relative; overflow: hidden; }
+.cta-primary::after { content: ''; position: absolute; top: 0; bottom: 0; left: -50%; width: 35%; background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,.32) 50%, transparent 100%); transform: skewX(-22deg); animation: shimmer 3.6s ease-in-out infinite; }
+@keyframes shimmer { 0% { left: -50%; } 60%, 100% { left: 130%; } }
+.cta-primary:hover { transform: translateY(-3px) scale(1.015); box-shadow: 0 0 80px rgba(var(--accent-rgb),.5); }
+.cta-secondary { color: var(--muted); font-size: 15px; text-decoration: none; padding: 20px 26px; border: 1px solid rgba(255,255,255,.10); border-radius: 14px; transition: all .25s; }
 .cta-secondary:hover { border-color: rgba(var(--accent-rgb),.28); color: var(--text); }
-/* שורת מועצה - שדה עריך (החליפו את שם המועצה בכפתור עריכה) */
-.council-line { margin-top: 30px; font-size: 14px; color: rgba(228,228,240,.65); letter-spacing: .02em; }
-.council-line b { color: var(--amber); font-weight: 700; }
+.council-line { margin-top: 24px; font-size: 14px; color: rgba(212,184,106,.9); }
+.council-line b { color: var(--amber); }
 
 /* STATS */
 .stats { position: relative; z-index: 1; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .stats-inner { display: grid; grid-template-columns: repeat(4,1fr); max-width: 1120px; margin: 0 auto; }
-.stat-item { padding: 54px 30px; text-align: center; position: relative; transition: background .3s; }
-.stat-item:hover { background: rgba(var(--accent-rgb),.03); }
-.stat-item:not(:last-child)::after { content: ''; position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 1px; height: 54px; background: linear-gradient(to bottom, transparent, rgba(255,255,255,.08), transparent); }
-.stat-num { font-family: var(--brand-font), sans-serif; font-weight: 900; font-size: clamp(46px,5vw,72px); line-height: 1; letter-spacing: -.045em; background: linear-gradient(130deg, var(--white) 20%, var(--amber) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.stat-suffix { font-size: .42em; font-weight: 300; -webkit-text-fill-color: rgba(var(--accent2-rgb),.75); vertical-align: super; }
-.stat-label { font-size: 14px; font-weight: 300; color: var(--muted); margin-top: 12px; letter-spacing: .05em; }
+.stat-item { padding: 50px 22px; text-align: center; position: relative; }
+.stat-item:not(:last-child)::after { content: ''; position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 1px; height: 50px; background: linear-gradient(to bottom, transparent, rgba(255,255,255,.10), transparent); }
+.stat-num { font-weight: 900; font-size: clamp(44px,5vw,66px); line-height: 1; letter-spacing: -.03em; background: linear-gradient(130deg, var(--white) 20%, var(--amber) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.stat-suffix { font-size: .42em; vertical-align: super; -webkit-text-fill-color: rgba(var(--accent2-rgb),.85); }
+.stat-label { font-size: 13.5px; color: var(--muted); margin-top: 12px; line-height: 1.45; }
 
 /* STORY */
-.story { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; padding: 110px 48px; }
-.section-label { font-size: 11px; letter-spacing: .2em; color: rgba(var(--accent2-rgb),.7); font-weight: 300; margin-bottom: 26px; }
-.story h2 { font-family: var(--heading-font); font-weight: 900; font-size: clamp(30px,4vw,50px); line-height: 1.18; letter-spacing: -.01em; color: var(--white); margin-bottom: 40px; }
+.story { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; padding: 100px 48px; }
+.section-label { font-size: 11px; letter-spacing: .2em; color: rgba(var(--accent2-rgb),.7); font-weight: 400; margin-bottom: 26px; }
+.story h2 { font-weight: 900; font-size: clamp(28px,4vw,46px); line-height: 1.2; color: var(--white); margin-bottom: 36px; }
 .story h2 .gold { background: linear-gradient(120deg, var(--orange), var(--amber)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.story p { font-size: clamp(17px,1.95vw,21px); font-weight: 400; line-height: 1.85; margin-bottom: 24px; color: rgba(228,228,240,.84); }
-.hl-word { color: rgba(228,228,240,.24); transition: color .25s ease; }
-.hl-word.lit { color: rgba(228,228,240,.92); }
+.story p { font-size: clamp(17px,1.9vw,20px); line-height: 1.85; margin-bottom: 22px; color: rgba(228,233,242,.84); }
+.hl-word { color: rgba(228,233,242,.24); transition: color .25s ease; } .hl-word.lit { color: rgba(228,233,242,.92); }
 .story p strong { font-weight: 700; color: var(--white); }
-.story p em { background: linear-gradient(90deg, var(--orange-2), var(--amber)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-style: normal; font-weight: 700; }
-.quote-block { margin-top: 50px; padding: 40px 46px; background: linear-gradient(135deg, rgba(var(--accent-rgb),.08) 0%, rgba(var(--accent2-rgb),.04) 50%, rgba(var(--accent-rgb),.03) 100%); border: 1px solid rgba(var(--accent-rgb),.16); border-radius: 20px; backdrop-filter: blur(20px); position: relative; overflow: hidden; }
-.quote-block::before { content: ''; position: absolute; top: 0; right: 0; width: 240px; height: 240px; background: radial-gradient(ellipse at top right, rgba(var(--accent2-rgb),.12), transparent 68%); pointer-events: none; }
-.quote-text { font-family: var(--heading-font); font-size: clamp(20px,2.2vw,27px); font-weight: 700; line-height: 1.5; color: var(--white); margin-bottom: 16px; letter-spacing: -.01em; }
-.quote-attr { font-size: 13px; font-weight: 300; letter-spacing: .08em; background: linear-gradient(90deg, var(--orange), var(--amber)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.story p em { background: linear-gradient(90deg, var(--orange), var(--amber)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-style: normal; font-weight: 700; }
+.statement-block { margin-top: 46px; padding: 34px 40px; background: linear-gradient(135deg, rgba(var(--accent-rgb),.08), rgba(var(--accent2-rgb),.03)); border: 1px solid rgba(var(--accent-rgb),.16); border-right: 4px solid var(--amber); border-radius: 18px; }
+.statement-text { font-size: clamp(19px,2.1vw,25px); font-weight: 700; line-height: 1.5; color: var(--white); }
+.statement-attr { margin-top: 14px; font-size: 13px; letter-spacing: .1em; color: var(--amber); }
 
 /* LIGHT */
 .light-section { position: relative; z-index: 2; background: var(--light-bg); color: var(--light-text); overflow: hidden; }
 .light-section.alt { background: linear-gradient(180deg, var(--light-bg) 0%, var(--light-bg-2) 100%); }
-.light-wrap { max-width: 1180px; margin: 0 auto; padding: 106px 48px; }
-.light-wrap.narrow { max-width: 920px; }
-.light-eyebrow { font-size: 11px; letter-spacing: .22em; font-weight: 300; color: rgba(var(--accent-rgb),.85); margin-bottom: 22px; }
-.light-h2 { font-family: var(--heading-font); font-weight: 900; font-size: clamp(32px,4.4vw,54px); line-height: 1.1; letter-spacing: -.015em; color: var(--light-text); margin-bottom: 24px; }
+.light-wrap { max-width: 1140px; margin: 0 auto; padding: 92px 48px; }
+.light-wrap.center { text-align: center; }
+.light-eyebrow { font-size: 11px; letter-spacing: .22em; font-weight: 500; color: var(--orange); margin-bottom: 20px; }
+.light-h2 { font-weight: 900; font-size: clamp(30px,4.2vw,50px); line-height: 1.14; color: var(--light-text); margin-bottom: 20px; }
 .light-h2 .orange { color: var(--orange); }
-.light-intro { font-size: clamp(17px,1.85vw,21px); font-weight: 400; line-height: 1.78; color: rgba(13,13,20,.74); max-width: 780px; margin-bottom: 54px; }
-.light-intro strong { color: var(--light-text); font-weight: 700; }
-.light-intro em { background: linear-gradient(90deg, var(--orange), var(--amber)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-style: normal; font-weight: 700; }
-.center { text-align: center; }
-.center .light-intro { margin-left: auto; margin-right: auto; }
+.light-intro { font-size: clamp(16.5px,1.8vw,20px); line-height: 1.75; color: rgba(51,64,90,.82); max-width: 720px; margin: 0 auto 48px; }
+.light-wrap:not(.center) .light-intro { margin-left: 0; }
+.light-intro strong { color: var(--light-text); font-weight: 700; } .light-intro em { color: var(--orange); font-style: normal; font-weight: 700; }
 
-/* 3-LAYER CARDS (method) */
-.layers-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
-.layer-card { padding: 44px 36px; background: #fff; border: 1px solid var(--light-border); border-radius: 22px; box-shadow: 0 6px 22px rgba(13,13,20,.04); transition: all .35s; position: relative; overflow: hidden; text-align: center; }
-.layer-card:hover { transform: translateY(-5px); border-color: rgba(var(--accent-rgb),.3); box-shadow: 0 26px 56px rgba(13,13,20,.10); }
-.layer-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--orange), var(--amber)); opacity: 0; transition: opacity .35s; }
-.layer-card:hover::before { opacity: 1; }
-.layer-emoji { display: inline-flex; align-items: center; justify-content: center; width: 64px; height: 64px; border-radius: 18px; background: linear-gradient(135deg, rgba(var(--accent-rgb),.14), rgba(var(--accent2-rgb),.06)); border: 1px solid rgba(var(--accent-rgb),.2); font-size: 30px; margin-bottom: 20px; }
-.layer-step { font-size: 11px; letter-spacing: .16em; color: rgba(var(--accent-rgb),.75); font-weight: 700; margin-bottom: 8px; }
-.layer-h3 { font-family: var(--heading-font); font-weight: 900; font-size: 24px; color: var(--light-text); margin-bottom: 12px; }
-.layer-text { font-size: 16px; line-height: 1.72; color: rgba(13,13,20,.72); font-weight: 400; }
+/* 3 LAYERS */
+.layers-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; text-align: right; }
+.layer-card { padding: 34px 30px; background: #fff; border: 1px solid var(--light-border); border-radius: 20px; box-shadow: 0 6px 22px rgba(26,39,68,.05); transition: all .35s; position: relative; overflow: hidden; }
+.layer-card:hover { transform: translateY(-4px); box-shadow: 0 24px 50px rgba(26,39,68,.10); border-color: rgba(var(--accent-rgb),.3); }
+.layer-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--orange),var(--amber)); opacity:0; transition:.35s; }
+.layer-card:hover::before { opacity:1; }
+.layer-emoji { width: 54px; height: 54px; border-radius: 14px; background: linear-gradient(135deg, rgba(var(--accent-rgb),.14), rgba(var(--accent2-rgb),.06)); border: 1px solid rgba(var(--accent-rgb),.2); display:flex; align-items:center; justify-content:center; font-size: 26px; margin-bottom: 16px; }
+.layer-step { font-size: 12px; letter-spacing: .1em; color: var(--orange); font-weight: 700; margin-bottom: 4px; }
+.layer-h3 { font-weight: 700; font-size: 21px; color: var(--light-text); margin-bottom: 10px; }
+.layer-text { font-size: 15px; line-height: 1.7; color: rgba(51,64,90,.78); }
 
-/* SESSIONS (DARK) */
-.sessions { position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; padding: 110px 48px; }
-.sessions-head { text-align: center; margin-bottom: 54px; }
-.sessions-head h2 { font-family: var(--heading-font); font-weight: 900; font-size: clamp(30px,4vw,50px); line-height: 1.15; color: var(--white); margin-bottom: 18px; letter-spacing: -.01em; }
-.sessions-head h2 .gold { background: linear-gradient(120deg, var(--orange), var(--amber)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.sessions-head p { font-size: clamp(16px,1.8vw,19px); color: rgba(228,228,240,.7); max-width: 720px; margin: 0 auto; line-height: 1.7; }
-.session-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 22px; }
-.session-card { padding: 40px 34px 36px; background: rgba(255,255,255,.025); border: 1px solid rgba(255,255,255,.07); border-radius: 22px; position: relative; overflow: hidden; transition: all .35s; }
-.session-card:hover { border-color: rgba(var(--accent-rgb),.24); background: rgba(var(--accent-rgb),.04); transform: translateY(-4px); box-shadow: 0 24px 50px rgba(0,0,0,.35); }
-.session-num { font-family: var(--brand-font), sans-serif; font-weight: 900; font-size: 70px; line-height: .9; letter-spacing: -.04em; color: transparent; -webkit-text-stroke: 1px rgba(var(--accent-rgb),.38); position: absolute; top: 18px; left: 26px; pointer-events: none; }
-.session-station { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; letter-spacing: .14em; font-weight: 400; color: rgba(var(--accent2-rgb),.85); margin-bottom: 16px; }
-.session-h3 { font-family: var(--heading-font); font-weight: 700; font-size: 23px; color: var(--white); margin-bottom: 14px; line-height: 1.3; }
-.session-text { font-size: 15.5px; line-height: 1.72; color: rgba(228,228,240,.74); font-weight: 400; }
+/* SESSIONS (dark) */
+.sessions { position: relative; z-index: 1; max-width: 1140px; margin: 0 auto; padding: 96px 48px; }
+.sessions-head { text-align: center; margin-bottom: 48px; }
+.sessions h2 { font-weight: 900; font-size: clamp(28px,4vw,46px); color: var(--white); margin-bottom: 14px; }
+.sessions h2 .gold { background: linear-gradient(120deg, var(--orange), var(--amber)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.sessions-head p { color: var(--muted); font-size: 16.5px; max-width: 680px; margin: 0 auto; line-height: 1.6; }
+.session-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+.session-card { padding: 28px 22px; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.07); border-radius: 18px; transition: all .35s; position: relative; }
+.session-card:hover { background: rgba(var(--accent-rgb),.06); border-color: rgba(var(--accent-rgb),.2); transform: translateY(-5px); }
+.session-num { font-family: var(--head-font); font-size: 40px; font-weight: 900; color: rgba(var(--accent-rgb),.28); line-height: 1; margin-bottom: 10px; }
+.session-station { font-size: 15px; color: var(--amber); font-weight: 700; margin-bottom: 6px; }
+.session-h3 { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+.session-text { font-size: 13.5px; line-height: 1.55; color: rgba(228,233,242,.72); }
 
-/* AUDIENCES (LIGHT) */
-.aud-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
-.aud-card { padding: 32px 30px; background: #fff; border: 1px solid var(--light-border); border-radius: 18px; box-shadow: 0 6px 22px rgba(13,13,20,.04); transition: all .32s; position: relative; overflow: hidden; }
-.aud-card:hover { transform: translateY(-4px); border-color: rgba(var(--accent-rgb),.28); box-shadow: 0 22px 46px rgba(13,13,20,.09); }
-.aud-emoji { font-size: 30px; margin-bottom: 14px; display: block; }
-.aud-h3 { font-family: var(--heading-font); font-weight: 700; font-size: 20px; color: var(--light-text); margin-bottom: 8px; }
-.aud-text { font-size: 15px; line-height: 1.65; color: rgba(13,13,20,.7); font-weight: 400; }
-.aud-card.more { background: linear-gradient(135deg, rgba(var(--accent-rgb),.07), rgba(var(--accent2-rgb),.03)); border-color: rgba(var(--accent-rgb),.28); display: flex; flex-direction: column; justify-content: center; }
-.aud-card.more .aud-h3 { color: var(--orange); }
+/* OUTCOMES (does-grid) */
+.does-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; text-align: right; }
+.does-card { padding: 30px 28px; background: #fff; border: 1px solid var(--light-border); border-radius: 20px; box-shadow: 0 6px 22px rgba(26,39,68,.05); transition: all .35s; }
+.does-card:hover { transform: translateY(-4px); box-shadow: 0 24px 50px rgba(26,39,68,.10); border-color: rgba(var(--accent-rgb),.3); }
+.does-emoji { width: 50px; height: 50px; border-radius: 13px; background: linear-gradient(135deg, rgba(var(--accent-rgb),.14), rgba(var(--accent2-rgb),.06)); border: 1px solid rgba(var(--accent-rgb),.18); display:flex; align-items:center; justify-content:center; font-size: 23px; margin-bottom: 16px; }
+.does-h3 { font-weight: 700; font-size: 19px; color: var(--light-text); margin-bottom: 9px; }
+.does-text { font-size: 15px; line-height: 1.65; color: rgba(51,64,90,.78); }
 
-/* FORMAT / DELIVERY (DARK) */
-.format { position: relative; z-index: 1; max-width: 1080px; margin: 0 auto; padding: 100px 48px; }
-.format-head { text-align: center; margin-bottom: 50px; }
-.format-head h2 { font-family: var(--heading-font); font-weight: 900; font-size: clamp(28px,3.8vw,46px); color: var(--white); letter-spacing: -.01em; }
-.format-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
-.format-item { display: flex; align-items: flex-start; gap: 16px; padding: 24px 26px; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.07); border-radius: 16px; transition: all .3s; }
-.format-item:hover { background: rgba(var(--accent-rgb),.05); border-color: rgba(var(--accent-rgb),.16); }
-.format-icon { width: 42px; height: 42px; flex-shrink: 0; border-radius: 12px; background: linear-gradient(135deg, rgba(var(--accent-rgb),.18), rgba(var(--accent2-rgb),.08)); border: 1px solid rgba(var(--accent-rgb),.16); display: flex; align-items: center; justify-content: center; font-size: 19px; }
-.format-item h4 { font-family: var(--heading-font); font-size: 18px; color: var(--white); margin-bottom: 5px; font-weight: 700; }
-.format-item p { font-size: 14.5px; line-height: 1.6; color: rgba(228,228,240,.72); }
+/* AUDIENCES */
+.aud-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; text-align: right; }
+.aud-card { padding: 22px 20px; background: #fff; border: 1px solid var(--light-border); border-radius: 16px; box-shadow: 0 4px 16px rgba(26,39,68,.04); transition: all .3s; }
+.aud-card:hover { transform: translateY(-3px); border-color: rgba(var(--accent-rgb),.28); }
+.aud-card.more { background: transparent; border-style: dashed; border-color: rgba(var(--accent-rgb),.4); }
+.aud-emoji { font-size: 24px; display: block; margin-bottom: 8px; }
+.aud-h3 { font-weight: 700; font-size: 16px; color: var(--light-text); margin-bottom: 5px; }
+.aud-text { font-size: 13px; line-height: 1.5; color: rgba(51,64,90,.72); }
 
-/* ABOUT (LIGHT) */
-.about-wrap { max-width: 980px; margin: 0 auto; padding: 100px 48px; display: grid; grid-template-columns: 200px 1fr; gap: 50px; align-items: center; }
-.about-photo { width: 200px; height: 200px; border-radius: 24px; object-fit: contain; background: linear-gradient(135deg, rgba(var(--accent-rgb),.10), rgba(var(--accent2-rgb),.05)); border: 1px solid rgba(var(--accent-rgb),.2); padding: 26px; }
-.about-h2 { font-family: var(--heading-font); font-weight: 900; font-size: clamp(28px,3.6vw,42px); color: var(--light-text); margin-bottom: 8px; letter-spacing: -.01em; }
-.about-role { font-size: 15px; color: var(--orange); font-weight: 700; letter-spacing: .03em; margin-bottom: 18px; }
-.about-text { font-size: 16.5px; line-height: 1.8; color: rgba(13,13,20,.76); }
+/* ACCORDION (progressive disclosure) */
+.acc-section { position: relative; z-index: 2; background: var(--light-bg-2); color: var(--light-text); }
+.acc-wrap { max-width: 880px; margin: 0 auto; padding: 80px 40px; }
+.acc-wrap > h2 { font-weight: 900; font-size: clamp(26px,3.4vw,40px); color: var(--light-text); text-align: center; margin-bottom: 8px; }
+.acc-wrap > h2 .orange { color: var(--orange); }
+.acc-sub { text-align: center; color: rgba(51,64,90,.7); margin-bottom: 40px; font-size: 16px; }
+details.acc { background: #fff; border: 1px solid var(--light-border); border-radius: 14px; margin-bottom: 12px; overflow: hidden; transition: box-shadow .25s; }
+details.acc[open] { box-shadow: 0 12px 34px rgba(26,39,68,.08); }
+details.acc summary { list-style: none; cursor: pointer; padding: 22px 26px; font-weight: 700; font-size: 17px; color: var(--light-text); display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+details.acc summary::-webkit-details-marker { display: none; }
+details.acc summary .chev { color: var(--orange); font-size: 20px; transition: transform .25s; flex-shrink: 0; }
+details.acc[open] summary .chev { transform: rotate(45deg); }
+.acc-body { padding: 0 26px 24px; color: rgba(51,64,90,.82); line-height: 1.75; font-size: 15.5px; }
+.acc-body ul { list-style: none; display: grid; gap: 10px; }
+.acc-body li { display: flex; gap: 10px; align-items: flex-start; }
+.acc-body li b { color: var(--light-text); }
+.acc-body .dot { color: var(--orange); flex-shrink: 0; }
+
+/* ABOUT */
+.about-wrap { max-width: 980px; margin: 0 auto; padding: 92px 48px; display: grid; grid-template-columns: 280px 1fr; gap: 50px; align-items: center; }
+.about-photo { width: 260px; height: 260px; border-radius: 50%; object-fit: cover; box-shadow: 0 18px 50px rgba(26,39,68,.22), 0 0 0 5px rgba(255,255,255,.9), 0 0 0 7px rgba(188,160,87,.55); }
+.about-name { font-weight: 900; font-size: clamp(28px,3.4vw,40px); color: var(--light-text); margin-bottom: 6px; }
+.about-role { font-size: 15px; color: var(--orange); font-weight: 700; margin-bottom: 20px; }
+.about-text { font-size: clamp(16px,1.7vw,18px); line-height: 1.8; color: rgba(51,64,90,.85); }
 .about-text strong { color: var(--light-text); font-weight: 700; }
 
-/* CONTACT (DARK) */
-.contact { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; padding: 110px 48px; text-align: center; }
-.contact h2 { font-family: var(--heading-font); font-weight: 900; font-size: clamp(32px,4.4vw,54px); color: var(--white); line-height: 1.12; letter-spacing: -.015em; margin-bottom: 20px; }
+/* CONTACT */
+.contact { position: relative; z-index: 1; padding: 50px 24px 80px; text-align: center; }
+.contact-card { max-width: 720px; margin: 0 auto; background: radial-gradient(120% 150% at 20% 10%, rgba(45,74,110,.92), rgba(22,33,55,.94)); border: 1px solid rgba(var(--accent-rgb),.2); border-radius: 26px; padding: 54px 40px; box-shadow: 0 30px 80px rgba(0,0,0,.35); position: relative; overflow: hidden; }
+.contact-card > * { position: relative; z-index: 2; }
+.contact h2 { font-weight: 900; font-size: clamp(27px,3.6vw,40px); color: var(--white); margin-bottom: 14px; }
 .contact h2 .gold { background: linear-gradient(120deg, var(--orange), var(--amber)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.contact .lead { font-size: clamp(17px,1.9vw,20px); color: rgba(228,228,240,.8); line-height: 1.7; max-width: 600px; margin: 0 auto 16px; }
-/* שורת מועצה בקשר - שדה עריך */
-.contact-council { font-size: 14px; color: rgba(228,228,240,.6); margin-bottom: 40px; }
-.contact-council b { color: var(--amber); }
-.contact-buttons { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; }
-.cbtn { display: inline-flex; align-items: center; gap: 10px; font-family: var(--brand-font), sans-serif; font-weight: 700; font-size: 16px; padding: 18px 30px; border-radius: 13px; text-decoration: none; transition: all .26s; }
-.cbtn.primary { background: linear-gradient(120deg, var(--orange) 0%, var(--amber) 100%); color: #1a2744; box-shadow: 0 0 46px rgba(var(--accent-rgb),.3), inset 0 1px 0 rgba(255,255,255,.18); }
-.cbtn.primary:hover { transform: translateY(-2px); box-shadow: 0 0 70px rgba(var(--accent-rgb),.45); }
-.cbtn.ghost { color: var(--text); border: 1px solid rgba(255,255,255,.14); }
-.cbtn.ghost:hover { border-color: rgba(var(--accent-rgb),.4); color: var(--amber); }
-.contact-direct { margin-top: 26px; font-size: 15px; color: rgba(228,228,240,.7); line-height: 2; }
-.contact-direct a { color: var(--amber); text-decoration: none; font-weight: 700; }
+.contact .lead { color: rgba(228,233,242,.8); font-size: 17px; line-height: 1.7; margin-bottom: 16px; max-width: 540px; margin-left: auto; margin-right: auto; }
+.contact-council { font-size: 14px; color: rgba(212,184,106,.85); margin-bottom: 28px; } .contact-council b { color: var(--amber); }
+.contact-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.cbtn { display: inline-flex; align-items: center; gap: 9px; font-weight: 700; font-size: 16px; padding: 16px 32px; border-radius: 13px; text-decoration: none; cursor: pointer; transition: all .25s; border: none; font-family: var(--brand-font); }
+.cbtn.primary { background: #25D366; color: #fff; } .cbtn.primary:hover { filter: brightness(1.06); transform: translateY(-2px); }
+.cbtn.ghost { background: transparent; color: var(--amber); border: 1.5px solid rgba(var(--accent-rgb),.5); } .cbtn.ghost:hover { background: rgba(var(--accent-rgb),.1); transform: translateY(-2px); }
+.contact-direct { margin-top: 24px; color: var(--muted); font-size: 14px; } .contact-direct a { color: var(--amber); text-decoration: none; }
 
 /* FOOTER */
 .site-footer { position: relative; z-index: 1; border-top: 1px solid var(--border); padding: 50px 48px; text-align: center; }
-.footer-logo { height: 44px; width: 44px; object-fit: contain; margin-bottom: 12px; }
-.footer-mark { font-family: var(--brand-font), sans-serif; font-weight: 900; font-size: 22px; letter-spacing: .04em; background: linear-gradient(120deg, var(--white) 45%, var(--amber)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px; display: block; }
-.footer-slogan { font-family: var(--heading-font); font-size: 15px; color: rgba(228,228,240,.6); margin-bottom: 14px; letter-spacing: .03em; }
-.footer-meta { font-size: 12px; letter-spacing: .08em; color: var(--muted); font-weight: 300; line-height: 1.9; }
-.footer-meta a { color: var(--muted); text-decoration: none; }
+.footer-logo { width: 150px; height: auto; margin: 0 auto 14px; display: block; }
+.footer-slogan { font-family: var(--head-font); color: rgba(212,184,106,.85); letter-spacing: .12em; margin-bottom: 12px; }
+.footer-meta { font-size: 12.5px; letter-spacing: .04em; color: var(--muted); font-weight: 300; line-height: 1.9; } .footer-meta a { color: var(--muted); text-decoration: none; }
 
-/* CURSOR GLOW */
 #cursor-glow { position: fixed; pointer-events: none; z-index: 50; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(var(--accent-rgb),.16) 0%, rgba(var(--accent2-rgb),.07) 40%, transparent 70%); filter: blur(48px); transform: translate(-50%, -50%); opacity: 0; transition: opacity .45s ease; }
 #cursor-glow.visible { opacity: 1; }
-
-/* FADEUP */
 .fadeup-ready { opacity: 0; transform: translateY(28px); }
 .fadeup-ready.fadeup-done { animation: fadeup-in .6s cubic-bezier(.22,.68,0,1.2) both; }
 @keyframes fadeup-in { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
 
-/* מובייל */
 @media (max-width: 880px) {
- nav { padding: 0 18px; }
- .nav-center, .nav-sub, .nav-cta { display: none; }
+ nav { padding: 0 18px; } .nav-center, .nav-sub { display: none; }
  .stats-inner { grid-template-columns: 1fr 1fr; }
- .layers-grid, .session-grid, .aud-grid, .format-grid { grid-template-columns: 1fr; }
- .about-wrap { grid-template-columns: 1fr; text-align: center; gap: 28px; justify-items: center; }
- .light-wrap, .story, .sessions, .format, .contact { padding-left: 22px; padding-right: 22px; }
+ .layers-grid, .session-grid, .does-grid { grid-template-columns: 1fr; }
+ .aud-grid { grid-template-columns: 1fr 1fr; }
+ .about-wrap { grid-template-columns: 1fr; gap: 28px; text-align: center; justify-items: center; }
+ .light-wrap, .story, .sessions, .acc-wrap { padding-left: 22px; padding-right: 22px; }
+ .horizon-boat { bottom: 3%; width: 56vw; opacity: .45; }
 }
+
 </style>
 </head>
 <body>
@@ -233,39 +225,31 @@ h1.hero-h1 { font-family: var(--heading-font); font-weight: 900; font-size: clam
 <div id="scroll-progress"></div>
 
 <div class="scene">
- <div class="a-right"></div><div class="a-left"></div><div class="a-btm"></div>
+ <div class="a-right"></div><div class="a-left"></div>
  <div class="orb-a"></div><div class="orb-b"></div>
  <div class="ring ring-1"></div><div class="ring ring-2"></div><div class="ring ring-3"></div>
  <div class="scene-grid"></div>
 </div>
 
-<!-- ===== NAV ===== -->
+<!-- NAV -->
 <nav>
- <div class="nav-left"><img src="logo.png" alt="בדרך שלך" class="nav-logo"><span class="brand-mark">בדרך שלך</span><div class="nav-divider"></div><span class="nav-sub">חוסן כלכלי לקהילה</span></div>
- <div class="nav-center"><div class="pill pill-orange"><span class="pre-dot"></span>סדנאות וליווי לרשויות</div></div>
+ <div class="nav-left"><img class="nav-logo" src="logo-mark.png" alt="בדרך שלך" onerror="this.style.display='none'"><span class="brand-mark">בדרך שלך</span><div class="nav-divider"></div><span class="nav-sub">חוסן כלכלי לקהילה</span></div>
+ <div class="nav-center"><div class="pill">סדנאות וליווי לרשויות</div></div>
  <a href="#contact" class="nav-cta">לתיאום שיחה</a>
 </nav>
 
-<!-- ===== HERO ===== -->
+<!-- HERO -->
 <section class="hero">
  <div class="hero-inner">
-  <div class="pre-head"><span class="pre-dot"></span>לרשויות, מועצות ומחלקות הרווחה</div>
-
-  <h1 class="hero-h1">
-   <span class="h1-solid">חוסן כלכלי לתושבים -<br>כשהכסף חוזר </span><span class="h1-warm">לידיים שלהם</span><span class="h1-solid">.</span>
-  </h1>
-
+  <div class="pre-head"><span class="pre-dot"></span>לרשויות, מועצות ומחלקות הרווחה והחינוך</div>
+  <h1 class="hero-h1"><span class="h1-solid">חוסן כלכלי לתושבים. </span><span class="h1-warm">כשהכסף חוזר לידיים שלהם.</span></h1>
   <p class="sub-promise" id="sub-promise-el"></p>
-
   <div class="cta-group">
    <a href="#contact" class="cta-primary">לתיאום שיחה</a>
    <a href="#audiences" class="cta-secondary">מגוון הסדנאות ↓</a>
   </div>
-
-  <!-- ⚠️ שדה עריך: החליפו את שם המועצה לכל פנייה (כפתור עריכה) -->
-  <p class="council-line">מותאם עבור: <b>מועצה אזורית חוף אשקלון</b></p>
+  <p class="council-line">מותאם עבור: <b>שם המועצה / הרשות</b></p>
  </div>
- <!-- סירה באופק - מוטיב "יחד · דרך · תנועה" (רקע ההירו) -->
  <div class="horizon-boat" aria-hidden="true">
   <svg viewBox="0 0 220 120" xmlns="http://www.w3.org/2000/svg">
    <line x1="0" y1="86" x2="220" y2="86" stroke="rgba(212,184,106,.40)" stroke-width="1"/>
@@ -277,183 +261,181 @@ h1.hero-h1 { font-family: var(--heading-font); font-weight: 900; font-size: clam
  </div>
 </section>
 
-<style>
-.horizon-boat{position:absolute;left:50%;bottom:7%;transform:translateX(-50%);z-index:0;width:min(240px,46vw);opacity:.5;pointer-events:none;animation:boat-bob 6.5s ease-in-out infinite}
-.horizon-boat svg{width:100%;height:auto;display:block}
-@keyframes boat-bob{0%,100%{transform:translateX(-50%) translateY(0) rotate(-1.2deg)}50%{transform:translateX(-50%) translateY(-10px) rotate(1.2deg)}}
-.nav-logo,.footer-logo{background:rgba(248,242,228,.96);border-radius:50%;padding:5px}
-.about-wrap{grid-template-columns:250px 1fr!important}
-.about-photo{background:transparent!important;padding:0!important;width:250px!important;height:auto!important;border-radius:18px!important}
-@media(max-width:880px){.about-wrap{grid-template-columns:1fr!important}.about-photo{width:min(280px,80vw)!important}}
-@media(max-width:880px){.horizon-boat{bottom:3%;opacity:.4;width:60vw}}
-</style>
-
-<!-- ===== STATS ===== -->
+<!-- STATS -->
 <section class="stats">
  <div class="stats-inner">
   <div class="stat-item"><div class="stat-num" data-target="4"><span class="stat-countup">4</span></div><div class="stat-label">מפגשים בסדנה</div></div>
-  <div class="stat-item"><div class="stat-num" data-target="3"><span class="stat-countup">3</span></div><div class="stat-label">רבדי למידה</div></div>
-  <div class="stat-item"><div class="stat-num" data-target="20"><span class="stat-countup">20</span><span class="stat-suffix">+</span></div><div class="stat-label">שנות ניסיון בחינוך וקהילה</div></div>
-  <div class="stat-item"><div class="stat-num" data-target="7"><span class="stat-countup">7</span></div><div class="stat-label">קהלי יעד ומותאמים</div></div>
+  <div class="stat-item"><div class="stat-num" data-target="3"><span class="stat-countup">3</span></div><div class="stat-label">רבדי עומק בכל מפגש</div></div>
+  <div class="stat-item"><div class="stat-num" data-target="20"><span class="stat-countup">20</span><span class="stat-suffix">+</span></div><div class="stat-label">שנים בחינוך, ליווי וקהילה</div></div>
+  <div class="stat-item"><div class="stat-num" data-target="7"><span class="stat-countup">7</span></div><div class="stat-label">קהלי יעד מותאמים</div></div>
  </div>
 </section>
 
-<!-- ===== STORY ===== -->
+<!-- STORY -->
 <section class="story" id="story-section">
  <div class="section-label">// למה דווקא עכשיו</div>
  <h2>הלחץ הכלכלי הוא לא רק מספרים. הוא <span class="gold">איכות חיים, בריאות ושקט נפשי</span>.</h2>
-
  <p>החיים הכלכליים מאתגרים לא רק ברגעי משבר - גם בתקופות של בלבול וחוסר ודאות, לקראת שינוי, או כשפשוט רוצים לצאת לדרך חדשה. עבור רבים, הכסף הפך ל<strong>מקור חרדה מתמשך</strong> - לא בגלל חוסר ידע בלבד, אלא בגלל תחושת חוסר שליטה.</p>
- <p>חוסן כלכלי הוא לא עוד הרצאה על חיסכון. הוא <em>שינוי ביחס לכסף</em> - במקום התחושה שהחיים פשוט קורים לי, מתחילים להבין שיש לי את היד על ההגה, ושאני זו/זה שבוחר/ת את הכיוון. וכשזה קורה, משתנים גם ההתנהלות, גם הזוגיות וגם ההורות.</p>
-
- <div class="quote-block">
-  <div class="quote-text">כסף הוא לא המטרה. הוא כלי - לחיים שאנחנו באמת רוצים.</div>
-  <div class="quote-attr">עינב ליבנה · בדרך שלך</div>
+ <p>חוסן כלכלי הוא לא עוד הרצאה על חיסכון. הוא <em>שינוי ביחס לכסף</em> - במקום התחושה שהחיים פשוט קורים לי, מתחילים להבין שיש לי את היד על ההגה, ושאני זו או זה שבוחר את הכיוון. וכשזה קורה, משתנים גם ההתנהלות, גם הזוגיות וגם ההורות.</p>
+ <div class="statement-block">
+  <div class="statement-text">כסף הוא לא המטרה. הוא כלי - לחיים שאנחנו באמת רוצים.</div>
+  <div class="statement-attr">עינב ליבנה · בדרך שלך</div>
  </div>
 </section>
 
-<!-- ===== METHOD - 3 LAYERS (LIGHT) ===== -->
+<!-- METHOD - 3 LAYERS -->
 <section class="light-section">
  <div class="light-wrap center">
   <div class="light-eyebrow">// השיטה</div>
   <h2 class="light-h2">איך באמת לומדים <span class="orange">חוסן כלכלי</span>?</h2>
   <p class="light-intro">שינוי אמיתי לא קורה מהרצאה אחת. הוא נבנה בשלושה רבדים שעובדים יחד - וזה מה שהופך מפגש לשינוי שנשאר גם אחרי שהסדנה נגמרת.</p>
-
   <div class="layers-grid">
-   <div class="layer-card fadeup-ready" style="--delay:0s">
-    <div class="layer-emoji">🧠</div>
-    <div class="layer-step">רובד 1</div>
-    <div class="layer-h3">מיינדסט</div>
-    <div class="layer-text">לשנות את היחס לכסף - בין אם זו חרדה, הימנעות או סתם בלבול - לעבר בהירות, ביטחון ובחירה. כי כל החלטה כלכלית היא קודם כל החלטה רגשית, והעבודה על האמונות והדפוסים היא שמשנה את ההתנהלות.</div>
-   </div>
-   <div class="layer-card fadeup-ready" style="--delay:.1s">
-    <div class="layer-emoji">📚</div>
-    <div class="layer-step">רובד 2</div>
-    <div class="layer-h3">ידע</div>
-    <div class="layer-text">להבין איך כסף עובד - תקציב, אשראי וריבית, חיסכון, התנהלות מול הבנק וזכויות. ידע מדויק, בשפה אנושית ונגישה.</div>
-   </div>
-   <div class="layer-card fadeup-ready" style="--delay:.2s">
-    <div class="layer-emoji">🛠️</div>
-    <div class="layer-step">רובד 3</div>
-    <div class="layer-h3">פרקטיקה</div>
-    <div class="layer-text">לתרגם להרגלים - כלים מעשיים שמיישמים בין מפגש למפגש, ליווי וקבוצת תמיכה שמחזיקים את השינוי לאורך זמן.</div>
-   </div>
+   <div class="layer-card fadeup-ready" style="--delay:0s"><div class="layer-emoji">🧭</div><div class="layer-step">רובד 1</div><div class="layer-h3">מיינדסט</div><div class="layer-text">לשנות את היחס לכסף - בין אם זו חרדה, הימנעות או סתם בלבול - לעבר בהירות, ביטחון ובחירה. כי כל החלטה כלכלית היא קודם כל החלטה רגשית, והעבודה על האמונות והדפוסים היא שמשנה את ההתנהלות.</div></div>
+   <div class="layer-card fadeup-ready" style="--delay:.1s"><div class="layer-emoji">📚</div><div class="layer-step">רובד 2</div><div class="layer-h3">ידע</div><div class="layer-text">להבין איך כסף עובד - תקציב, אשראי וריבית, חיסכון, התנהלות מול הבנק וזכויות. ידע מדויק, בשפה אנושית ונגישה.</div></div>
+   <div class="layer-card fadeup-ready" style="--delay:.2s"><div class="layer-emoji">🛠️</div><div class="layer-step">רובד 3</div><div class="layer-h3">פרקטיקה</div><div class="layer-text">לתרגם להרגלים - כלים מעשיים שמיישמים בין מפגש למפגש, ליווי וקבוצת תמיכה שמחזיקים את השינוי לאורך זמן.</div></div>
   </div>
  </div>
 </section>
 
-<!-- ===== SESSIONS - המסע ב-4 מפגשים (DARK) ===== -->
+<!-- SESSIONS - 4 meetings -->
 <section class="sessions" id="how">
  <div class="sessions-head">
   <div class="section-label" style="text-align:center">// שדרת הסדנה</div>
   <h2>המסע, ב<span class="gold">ארבעה מפגשים</span></h2>
   <p>מבנה מוכח שעובד בשטח - מהמקום שבו המשתתפים היום ועד שהם אוחזים בהגה. השדרה קבועה; התוכן והדגשים מותאמים לכל קהל.</p>
  </div>
-
  <div class="session-grid">
   <div class="session-card fadeup-ready" style="--delay:0s"><div class="session-num">01</div><div class="session-station">🧭 המצפן הערכי</div><div class="session-h3">לאן אנחנו מפליגים</div><div class="session-text">חיבור הכסף לערכים ולחלומות. כשברור לאן רוצים להגיע, הכסף הופך מנטל לכלי שמשרת את החיים.</div></div>
-  <div class="session-card fadeup-ready" style="--delay:.08s"><div class="session-num">02</div><div class="session-station">🗺️ מפת הסיכונים</div><div class="session-h3">לזהות את המוקשים</div><div class="session-text">זיהוי בורות ומלכודות של תחילת הדרך - הלוואות, אשראי, מסגרת וריבית. מבינים את השטח לפני שיוצאים לדרך.</div></div>
+  <div class="session-card fadeup-ready" style="--delay:.08s"><div class="session-num">02</div><div class="session-station">🗺️ מפת הסיכונים</div><div class="session-h3">לזהות את המוקשים</div><div class="session-text">זיהוי בורות ומלכודות - הלוואות, אשראי, מסגרת וריבית. מבינים את השטח לפני שיוצאים לדרך.</div></div>
   <div class="session-card fadeup-ready" style="--delay:.16s"><div class="session-num">03</div><div class="session-station">⚓ הטלת עוגן</div><div class="session-h3">כלים ובסיס איתן</div><div class="session-text">כלים פרקטיים לניהול תקציב, בניית בסיס יציב והתחלת קרן ביטחון. הכלים שנשארים הרבה אחרי הסדנה.</div></div>
-  <div class="session-card fadeup-ready" style="--delay:.24s"><div class="session-num">04</div><div class="session-station">⛵ מפליגים</div><div class="session-h3">תוכנית פעולה לעתיד</div><div class="session-text">הופכים חלום אחד אמיתי לתוכנית עם צעדים ותאריכים. המשתתפים יוצאים עם כיוון ברור ועם הביטחון להפליג.</div></div>
+  <div class="session-card fadeup-ready" style="--delay:.24s"><div class="session-num">04</div><div class="session-station">⛵ מפליגים</div><div class="session-h3">תוכנית פעולה לעתיד</div><div class="session-text">הופכים חלום אחד אמיתי לתוכנית עם צעדים ותאריכים. יוצאים עם כיוון ברור ועם הביטחון להפליג.</div></div>
  </div>
 </section>
 
-<!-- ===== AUDIENCES (LIGHT) ===== -->
-<section class="light-section alt" id="audiences">
+<!-- OUTCOMES -->
+<section class="light-section alt">
+ <div class="light-wrap">
+  <div class="light-eyebrow">// מה לוקחים מהמסע</div>
+  <h2 class="light-h2">מה המשתתפים <span class="orange">לוקחים איתם</span></h2>
+  <p class="light-intro">לא עוד יום עיון שנשכח למחרת. <em>שינוי שנשאר</em> - תחושת שליטה, ראש פתוח לכיוונים חדשים, וצעדים שאפשר ליישם כבר באותו ערב.</p>
+  <div class="does-grid">
+   <div class="does-card fadeup-ready" style="--delay:0s"><div class="does-emoji">🧭</div><div class="does-h3">שליטה במקום חוסר אונים</div><div class="does-text">במקום להרגיש שהחיים פשוט קורים להם, המשתתפים מתחילים להבין שיש להם את היכולת לנווט את הספינה ולבחור את הדרך.</div></div>
+   <div class="does-card fadeup-ready" style="--delay:.08s"><div class="does-emoji">💬</div><div class="does-h3">שפה משותפת</div><div class="does-text">כלים לדבר על כסף בגובה העיניים - כי כל החלטה כלכלית היא קודם כל החלטה רגשית.</div></div>
+   <div class="does-card fadeup-ready" style="--delay:.16s"><div class="does-emoji">💡</div><div class="does-h3">לראות שאפשר</div><div class="does-text">פתיחת הראש לכיוונים שלא חשבו עליהם, והפחתת החשש - התחושה שזה בהישג יד, גם אם מתחילים בצעד קטן.</div></div>
+   <div class="does-card fadeup-ready" style="--delay:.24s"><div class="does-emoji">⚓</div><div class="does-h3">חוסן לטווח ארוך</div><div class="does-text">לא טיפ חולף, אלא יכולת שנשארת - הרגלים וכלים שממשיכים לעבוד גם כשהסדנה נגמרת.</div></div>
+  </div>
+ </div>
+</section>
+
+<!-- AUDIENCES -->
+<section class="light-section" id="audiences">
  <div class="light-wrap center">
   <div class="light-eyebrow">// סדנאות לכל קהל</div>
   <h2 class="light-h2">אותו עוגן, <span class="orange">התאמה לכל קהל</span></h2>
   <p class="light-intro">הרעיון המרכזי - "החיים, גם הכלכליים, בידיים שלנו" - משותף לכולם. המטרות, השפה והדגשים מותאמים בקפידה לכל קבוצה.</p>
-
-  <div class="aud-grid" style="text-align:right">
+  <div class="aud-grid">
    <div class="aud-card fadeup-ready" style="--delay:0s"><span class="aud-emoji">👩</span><div class="aud-h3">נשים</div><div class="aud-text">עצמאות כלכלית, ביטחון בקבלת החלטות ושבירת הטאבו סביב כסף.</div></div>
-   <div class="aud-card fadeup-ready" style="--delay:.06s"><span class="aud-emoji">🎒</span><div class="aud-h3">צעירים (אחרי צבא, 24-35)</div><div class="aud-text">הכסף הראשון והיציאה לעצמאות - בלי ליפול למלכודות אשראי ואוברדראפט.</div></div>
-   <div class="aud-card fadeup-ready" style="--delay:.12s"><span class="aud-emoji">🔄</span><div class="aud-h3">גרושים וגרושות</div><div class="aud-text">בנייה מחדש של בסיס כלכלי אחרי פרידה, ומעבר לניהול עצמאי ובטוח.</div></div>
-   <div class="aud-card fadeup-ready" style="--delay:.18s"><span class="aud-emoji">🍎</span><div class="aud-h3">אנשי ונשות חינוך</div><div class="aud-text">כלים לעצמם, ויכולת להעביר חוסן כלכלי הלאה לתלמידים ולהורים.</div></div>
-   <div class="aud-card fadeup-ready" style="--delay:.24s"><span class="aud-emoji">🤝</span><div class="aud-h3">עו"סיות ואנשי מקצוע</div><div class="aud-text">שפה וכלים מעשיים לעבודה עם מטופלים ומשפחות במצוקה כלכלית.</div></div>
-   <div class="aud-card fadeup-ready" style="--delay:.3s"><span class="aud-emoji">🎓</span><div class="aud-h3">בני נוער (י-יב)</div><div class="aud-text">הרגלים נכונים לפני היציאה לחיים - מבוסס על הפיילוט המוכח "העתיד בידיים שלנו".</div></div>
-   <div class="aud-card fadeup-ready" style="--delay:.36s"><span class="aud-emoji">🌱</span><div class="aud-h3">שנת שירות ובזמן השירות</div><div class="aud-text">ניהול מלגה ודמי קיום, ובניית הרגלים כלכליים בריאים כבר עכשיו.</div></div>
-   <div class="aud-card more fadeup-ready" style="--delay:.42s"><div class="aud-h3">ועוד קהלים</div><div class="aud-text">הורים צעירים, גמלאים, עובדי הרשות ועוד - בונים מתווה מותאם לכל קבוצה.</div></div>
+   <div class="aud-card fadeup-ready" style="--delay:.05s"><span class="aud-emoji">🎒</span><div class="aud-h3">צעירים (24-35)</div><div class="aud-text">הכסף הראשון והיציאה לעצמאות - בלי ליפול למלכודות אשראי ואוברדרפט.</div></div>
+   <div class="aud-card fadeup-ready" style="--delay:.1s"><span class="aud-emoji">🔄</span><div class="aud-h3">גרושים וגרושות</div><div class="aud-text">בנייה מחדש של בסיס כלכלי אחרי פרידה, ומעבר לניהול עצמאי ובטוח.</div></div>
+   <div class="aud-card fadeup-ready" style="--delay:.15s"><span class="aud-emoji">🎓</span><div class="aud-h3">בני נוער (י-יב)</div><div class="aud-text">הרגלים נכונים לפני היציאה לחיים - מבוסס על הפיילוט המוכח "העתיד בידיים שלנו".</div></div>
+   <div class="aud-card fadeup-ready" style="--delay:.2s"><span class="aud-emoji">🍎</span><div class="aud-h3">אנשי ונשות חינוך</div><div class="aud-text">כלים לעצמם, ויכולת להעביר חוסן כלכלי הלאה לתלמידים ולהורים.</div></div>
+   <div class="aud-card fadeup-ready" style="--delay:.25s"><span class="aud-emoji">🤝</span><div class="aud-h3">עו"סיות ואנשי מקצוע</div><div class="aud-text">שפה וכלים מעשיים לעבודה עם מטופלים ומשפחות במצוקה כלכלית.</div></div>
+   <div class="aud-card fadeup-ready" style="--delay:.3s"><span class="aud-emoji">🌱</span><div class="aud-h3">שנת שירות ושירות לאומי</div><div class="aud-text">ניהול מלגה ודמי קיום, ובניית הרגלים כלכליים בריאים כבר עכשיו.</div></div>
+   <div class="aud-card more fadeup-ready" style="--delay:.35s"><span class="aud-emoji">➕</span><div class="aud-h3">ועוד קהלים</div><div class="aud-text">הורים צעירים, גמלאים, עובדי הרשות ועוד - בונים מתווה מותאם לכל קבוצה.</div></div>
   </div>
  </div>
 </section>
 
-<!-- ===== FORMAT (DARK) ===== -->
-<section class="format">
- <div class="format-head">
-  <div class="section-label" style="text-align:center">// איך זה עובד בפועל</div>
-  <h2>תפעול חלק, מקצועי ומלוטש</h2>
- </div>
- <div class="format-grid">
-  <div class="format-item fadeup-ready" style="--delay:0s"><div class="format-icon">📅</div><div><h4>4 מפגשים קבוצתיים</h4><p>כ-90 דקות כל מפגש, בקבוצה קטנה ומכוונת. ניתן להעביר במתחמי המועצה או אונליין.</p></div></div>
-  <div class="format-item fadeup-ready" style="--delay:.06s"><div class="format-icon">📝</div><div><h4>רישום אוטומטי ומלוטש</h4><p>טופס הרשמה דיגיטלי פשוט - בלי עומס על צוות המועצה, עם תחושת יוקרה לנרשמים.</p></div></div>
-  <div class="format-item fadeup-ready" style="--delay:.12s"><div class="format-icon">💬</div><div><h4>וואטסאפ וליווי מרחוק</h4><p>כל משתתף מצורף לקבוצת הסדנה - ערוץ ישיר לשאלות ותזכורות, וליווי מרחוק לאורך כל התהליך, גם בין המפגשים.</p></div></div>
-  <div class="format-item fadeup-ready" style="--delay:.18s"><div class="format-icon">📊</div><div><h4>מדידה ודוח אימפקט</h4><p>שאלוני פתיחה וסיום שמראים את השינוי - דוח שמאפשר למועצה לראות את התוצאה.</p></div></div>
-  <div class="format-item fadeup-ready" style="--delay:.24s"><div class="format-icon">🧰</div><div><h4>חומרי עבודה לכל משתתף</h4><p>דפי עבודה, כלים וגיליונות מעשיים שנשארים אצל המשתתפים גם אחרי הסדנה.</p></div></div>
-  <div class="format-item fadeup-ready" style="--delay:.3s"><div class="format-icon">👥</div><div><h4>קבוצה של 15-20 משתתפים</h4><p>הגודל המומלץ לאיזון בין למידה אישית לעומק קבוצתי. בביקוש גבוה - נפתחת קבוצה נוספת.</p></div></div>
+<!-- ACCORDIONS: what's included + FAQ -->
+<section class="acc-section">
+ <div class="acc-wrap">
+  <h2>כל מה ש<span class="orange">כלול במעטפת</span> הסדנה</h2>
+  <p class="acc-sub">לחצו לפתיחה - הכל מתואם ומנוהל, בלי עומס על צוות הרשות.</p>
+
+  <details class="acc" open>
+   <summary>מה כולל הליווי המלא <span class="chev">+</span></summary>
+   <div class="acc-body">
+    <ul>
+     <li><span class="dot">●</span><span><b>4 מפגשים קבוצתיים</b> - כ-90 דקות כל מפגש, בקבוצה קטנה ומכוונת. ניתן להעביר במתחמי הרשות או אונליין.</span></li>
+     <li><span class="dot">●</span><span><b>רישום דיגיטלי פשוט</b> - טופס הרשמה מסודר, בלי עומס על הצוות, עם תחושת יוקרה לנרשמים.</span></li>
+     <li><span class="dot">●</span><span><b>וואטסאפ וליווי מרחוק</b> - כל משתתף מצורף לקבוצת הסדנה: ערוץ ישיר לשאלות ותזכורות, וליווי גם בין המפגשים.</span></li>
+     <li><span class="dot">●</span><span><b>מדידה ודוח אימפקט</b> - שאלוני פתיחה וסיום שמראים את השינוי, ודוח שמאפשר לרשות לראות את התוצאה.</span></li>
+     <li><span class="dot">●</span><span><b>חומרי עבודה לכל משתתף</b> - דפי עבודה, כלים וגיליונות מעשיים שנשארים גם אחרי הסדנה.</span></li>
+     <li><span class="dot">●</span><span><b>קבוצה של 15-20 משתתפים</b> - הגודל המומלץ לאיזון בין למידה אישית לעומק קבוצתי. בביקוש גבוה נפתחת קבוצה נוספת.</span></li>
+    </ul>
+   </div>
+  </details>
+
+  <details class="acc">
+   <summary>פורמט, מיקום ולוחות זמנים <span class="chev">+</span></summary>
+   <div class="acc-body">המפגשים מתקיימים פנים אל פנים במתחמי הרשות, או אונליין - לפי מה שנוח לקהל. סדרה של 4 מפגשים, בדרך כלל שבועי או דו-שבועי, בתיאום מלא עם לוח הזמנים שלכם.</div>
+  </details>
+
+  <details class="acc">
+   <summary>תקציב ומודל התקשרות <span class="chev">+</span></summary>
+   <div class="acc-body">הרשות מתקצבת את המקצועיות, והמשתתפים משלמים דמי רצינות מסובסדים - מודל שמעלה מחויבות והגעה. ההצעה המדויקת נבנית יחד אחרי שיחה קצרה שבה נבין את הקהל, המטרות והיקף הסדנאות.</div>
+  </details>
+
+  <details class="acc">
+   <summary>איך מודדים הצלחה <span class="chev">+</span></summary>
+   <div class="acc-body">שאלון פתיחה וסיום שמודד את השינוי בתחושת השליטה, בידע ובהתנהלות, ודוח אימפקט מסכם לרשות. כך ההשקעה נמדדת בתוצאה, לא רק בנוכחות.</div>
+  </details>
  </div>
 </section>
 
-<!-- ===== ABOUT (LIGHT) ===== -->
+<!-- ABOUT -->
 <section class="light-section">
  <div class="about-wrap">
-  <img src="logo-full.png" alt="עינב ליבנה · מאמנת לחוסן כלכלי" class="about-photo">
+  <img class="about-photo fadeup-ready" src="einav.jpg" alt="עינב ליבנה">
   <div>
    <div class="light-eyebrow">// מי מעבירה</div>
-   <h2 class="about-h2">עינב ליבנה</h2>
+   <div class="about-name">עינב ליבנה</div>
    <div class="about-role">מאמנת לחוסן כלכלי · אשת חינוך · מנחת קבוצות</div>
-   <p class="about-text">מעל <strong>20 שנה</strong> בחינוך, בהובלת פרויקטים חברתיים ובעבודה קהילתית במועצה אזורית. מלווה אנשים לחזור לשליטה ולחלום - גם בתקופות של אי-ודאות ומשבר. הסדנה הקבוצתית נולדה מפיילוט שהעברתי לבני נוער, <strong>"העתיד בידיים שלנו"</strong>, ומבוססת על תהליך אימון אישי מוכח. בעלת עוסק מורשה, מקיבוץ גבולות.</p>
+   <p class="about-text">מעל <strong>20 שנה</strong> בחינוך, בהובלת פרויקטים חברתיים ובעבודה קהילתית במועצה אזורית. השנים האחרונות לימדו את כולנו מה קורה כשהקרקע נשמטת מתחת לרגליים - ומשם אני מלווה אנשים לחזור לשליטה, לבהירות וליכולת לחלום. הסדנה הקבוצתית נולדה מהפיילוט המוכח <strong>"העתיד בידיים שלנו"</strong>, ומבוססת על תהליך אימון אישי שעובד בשטח. בעלת עוסק מורשה, מקיבוץ גבולות.</p>
   </div>
  </div>
 </section>
 
-<!-- ===== CONTACT (DARK) ===== -->
+<!-- CONTACT -->
 <section class="contact" id="contact">
- <div class="section-label" style="text-align:center">// הצעד הבא</div>
- <h2>בואו נבנה יחד <span class="gold">מתווה מותאם</span></h2>
- <p class="lead">נשמח לשיחה קצרה כדי להבין את הצרכים של הקהילה ולבנות הצעה מדויקת - קהל, מטרות ולוחות זמנים.</p>
- <!-- ⚠️ שדה עריך: שם המועצה / האגף הפונה -->
- <p class="contact-council">בתיאום עם: <b>האגף לשירותים חברתיים, מועצה אזורית חוף אשקלון</b></p>
-
- <div class="contact-buttons">
-  <a href="https://wa.me/972554204742" target="_blank" rel="noopener" class="cbtn primary">💬 שיחה בוואטסאפ</a>
-  <a href="mailto:einav.livne@gmail.com?subject=סדנת חוסן כלכלי - מועצה" class="cbtn ghost">✉️ שליחת מייל</a>
- </div>
-
- <div class="contact-direct">
-  עינב ליבנה · <a href="tel:0547919111">054-791-9111</a><br>
-  <a href="mailto:einav.livne@gmail.com">einav.livne@gmail.com</a>
+ <div class="contact-card">
+  <div class="section-label" style="text-align:center">// הצעד הבא</div>
+  <h2>בואו נבנה יחד <span class="gold">מתווה מותאם</span></h2>
+  <p class="lead">שיחה קצרה כדי להבין את הצרכים של הקהילה, ולבנות הצעה מדויקת - קהל, מטרות ולוחות זמנים. בלי התחייבות.</p>
+  <p class="contact-council">בתיאום עם: <b>שם האגף / הרשות</b></p>
+  <div class="contact-buttons">
+   <a href="#" onclick="waLink(event)" class="cbtn primary">💬 שיחה בוואטסאפ</a>
+   <a href="mailto:einav.livne@gmail.com?subject=סדנת חוסן כלכלי - רשות" class="cbtn ghost">✉️ שליחת מייל</a>
+  </div>
+  <div class="contact-direct">עינב ליבנה · <a href="tel:0552704742">055-270-4742</a> · <a href="mailto:einav.livne@gmail.com">einav.livne@gmail.com</a></div>
  </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
+<!-- FOOTER -->
 <footer class="site-footer">
- <img src="logo.png" alt="בדרך שלך" class="footer-logo">
- <span class="footer-mark">בדרך שלך</span>
+ <img class="footer-logo" src="logo-full.png" alt="בדרך שלך · עינב ליבנה" onerror="this.style.display='none'">
  <div class="footer-slogan">לחלום · להבין · לתכנן · להגשים</div>
- <div class="footer-meta">
-  עינב ליבנה · מאמנת לחוסן כלכלי · קיבוץ גבולות<br>
-  <a href="tel:0547919111">054-791-9111</a> · <a href="mailto:einav.livne@gmail.com">einav.livne@gmail.com</a><br>
-  © בדרך שלך · כל הזכויות שמורות
- </div>
+ <div class="footer-meta">עינב ליבנה · מאמנת לחוסן כלכלי · קיבוץ גבולות<br><a href="tel:0552704742">055-270-4742</a> · <a href="mailto:einav.livne@gmail.com">einav.livne@gmail.com</a></div>
 </footer>
 
 <script>
-/* 1. SCROLL PROGRESS */
+function waLink(e){ if(e) e.preventDefault(); var msg='היי עינב, הגעתי דרך דף הסדנאות לרשויות של "בדרך שלך". אשמח לתאם שיחה על סדנה לקהילה שלנו.'; window.open('https://wa.me/972552704742?text='+encodeURIComponent(msg),'_blank'); }
+
+/* SCROLL PROGRESS */
 (function(){const bar=document.getElementById('scroll-progress');function u(){const s=window.scrollY||document.documentElement.scrollTop;const d=document.documentElement.scrollHeight-document.documentElement.clientHeight;bar.style.width=(d>0?(s/d)*100:0)+'%';}window.addEventListener('scroll',u,{passive:true});u();})();
 
-/* 2. TYPEWRITER */
+/* TYPEWRITER */
 (function(){
  const el=document.getElementById('sub-promise-el'); if(!el) return;
- const fullHTML='סדנאות חוסן כלכלי ותהליכים אישיים, מותאמים לקהל שלכם - <strong>לנוער, למשפחות, לצוותים ולקהילה</strong>. <span class="warm">מי שמכירה את השטח מבפנים.</span>';
- function tokenize(html){const t=[];let i=0;while(i<html.length){if(html[i]==='<'){let j=html.indexOf('>',i);if(j===-1)j=html.length-1;t.push({type:'tag',value:html.slice(i,j+1)});i=j+1;}else{let j=html.indexOf('<',i);if(j===-1)j=html.length;t.push({type:'text',value:html.slice(i,j)});i=j;}}return t;}
- const tokens=tokenize(fullHTML);let rendered='',ti=0,ci=0,cur=null;
+ const fullHTML='סדנאות חוסן כלכלי מותאמות לקהל שלכם - לנוער, למשפחות, לצוותים ולקהילה. <strong>עם מי שמכירה את השטח מבפנים</strong>, ומחזירה אנשים ל<span class="warm">שליטה, בהירות ויכולת לחלום</span>.';
+ function tk(h){const t=[];let i=0;while(i<h.length){if(h[i]==='<'){let j=h.indexOf('>',i);if(j===-1)j=h.length-1;t.push({t:'tag',v:h.slice(i,j+1)});i=j+1;}else{let j=h.indexOf('<',i);if(j===-1)j=h.length;t.push({t:'txt',v:h.slice(i,j)});i=j;}}return t;}
+ const tokens=tk(fullHTML);let r='',ti=0,ci=0,cur=null;
  function rc(){if(cur)cur.remove();cur=document.createElement('span');cur.className='tw-cursor';cur.style.height='1em';el.appendChild(cur);}
- function step(){if(ti>=tokens.length){setTimeout(()=>{if(cur)cur.remove();},1500);return;}const tok=tokens[ti];if(tok.type==='tag'){rendered+=tok.value;ti++;ci=0;el.innerHTML=rendered;rc();setTimeout(step,8);}else{if(ci<tok.value.length){rendered+=tok.value[ci];ci++;el.innerHTML=rendered;rc();setTimeout(step,22);}else{ti++;ci=0;setTimeout(step,8);}}}
- setTimeout(step,1100);
+ function st(){if(ti>=tokens.length){setTimeout(()=>{if(cur)cur.remove();},1500);return;}const k=tokens[ti];if(k.t==='tag'){r+=k.v;ti++;ci=0;el.innerHTML=r;rc();setTimeout(st,8);}else{if(ci<k.v.length){r+=k.v[ci];ci++;el.innerHTML=r;rc();setTimeout(st,22);}else{ti++;ci=0;setTimeout(st,8);}}}
+ setTimeout(st,900);
 })();
 
-/* 3. WORD HIGHLIGHT */
+/* WORD HIGHLIGHT */
 (function(){
  const s=document.getElementById('story-section'); if(!s) return;
  s.querySelectorAll('p').forEach(p=>{function wt(n){const w=n.textContent.split(/(\s+)/);const f=document.createDocumentFragment();w.forEach(part=>{if(/^\s+$/.test(part)||part===''){f.appendChild(document.createTextNode(part));}else{const sp=document.createElement('span');sp.className='hl-word';sp.textContent=part;f.appendChild(sp);}});n.parentNode.replaceChild(f,n);}function wn(n){if(n.nodeType===Node.TEXT_NODE){if(n.textContent.trim())wt(n);}else if(n.nodeType===Node.ELEMENT_NODE){Array.from(n.childNodes).forEach(wn);}}wn(p);});
@@ -462,31 +444,30 @@ h1.hero-h1 { font-family: var(--heading-font); font-weight: 900; font-size: clam
  window.addEventListener('scroll',uh,{passive:true});uh();
 })();
 
-/* 4. COUNT-UP */
+/* COUNT-UP */
 (function(){
  const si=document.querySelector('.stats-inner'); if(!si||!('IntersectionObserver' in window))return;
  let t=false;function eo(x){return 1-Math.pow(1-x,3);}function ac(el,tg,d){let st=null;function s(ts){if(!st)st=ts;const p=Math.min((ts-st)/d,1);el.textContent=Math.round(eo(p)*tg);if(p<1)requestAnimationFrame(s);else el.textContent=tg;}requestAnimationFrame(s);}
  const o=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting&&!t){t=true;o.disconnect();si.querySelectorAll('.stat-item').forEach(it=>{const n=it.querySelector('.stat-num');if(!n)return;const tg=parseInt(n.getAttribute('data-target'),10);const c=n.querySelector('.stat-countup');if(c&&!isNaN(tg))ac(c,tg,1400);});}});},{threshold:0.3});o.observe(si);
 })();
 
-/* 5. FADEUP */
+/* FADEUP */
 (function(){
  if(!('IntersectionObserver' in window)){document.querySelectorAll('.fadeup-ready').forEach(el=>{el.style.opacity='1';el.style.transform='none';});return;}
  const o=new IntersectionObserver((es,ob)=>{es.forEach(e=>{if(e.isIntersecting){const el=e.target;el.style.animationDelay=el.style.getPropertyValue('--delay')||'0s';el.classList.add('fadeup-done');ob.unobserve(el);}});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
  document.querySelectorAll('.fadeup-ready').forEach(el=>o.observe(el));
 })();
 
-/* 6. CURSOR GLOW */
+/* CURSOR GLOW */
 (function(){
  const g=document.getElementById('cursor-glow'); if(!g)return;
- const sel=['.hero','.stats','.story','.sessions','.format','.contact','.site-footer'];
+ const sel=['.hero','.stats','.story','.sessions','.contact','.site-footer'];
  const els=sel.map(s=>document.querySelector(s)).filter(Boolean);
  let gx=0,gy=0,tx=0,ty=0,active=false,raf=null;
  function over(x,y){return els.some(el=>{const r=el.getBoundingClientRect();return x>=r.left&&x<=r.right&&y>=r.top&&y<=r.bottom;});}
  function lerp(){gx+=(tx-gx)*0.12;gy+=(ty-gy)*0.12;g.style.left=gx+'px';g.style.top=gy+'px';raf=requestAnimationFrame(lerp);}
- document.addEventListener('mousemove',e=>{tx=e.clientX;ty=e.clientY;const o=over(e.clientX,e.clientY);if(o&&!active){active=true;g.classList.add('visible');gx=tx;gy=ty;g.style.left=gx+'px';g.style.top=gy+'px';if(!raf)raf=requestAnimationFrame(lerp);}else if(!o&&active){active=false;g.classList.remove('visible');if(raf){cancelAnimationFrame(raf);raf=null;}}});
+ document.addEventListener('mousemove',e=>{tx=e.clientX;ty=e.clientY;const ov=over(e.clientX,e.clientY);if(ov&&!active){active=true;g.classList.add('visible');gx=tx;gy=ty;g.style.left=gx+'px';g.style.top=gy+'px';if(!raf)raf=requestAnimationFrame(lerp);}else if(!ov&&active){active=false;g.classList.remove('visible');if(raf){cancelAnimationFrame(raf);raf=null;}}});
 })();
 </script>
-
 </body>
 </html>
