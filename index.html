@@ -265,7 +265,26 @@ h1.hero-h1 { font-family: var(--heading-font); font-weight: 900; font-size: clam
   <!-- ⚠️ שדה עריך: החליפו את שם המועצה לכל פנייה (כפתור עריכה) -->
   <p class="council-line">מותאם עבור: <b>מועצה אזורית חוף אשקלון</b></p>
  </div>
+ <!-- סירה באופק - מוטיב "יחד · דרך · תנועה" (רקע ההירו) -->
+ <div class="horizon-boat" aria-hidden="true">
+  <svg viewBox="0 0 220 120" xmlns="http://www.w3.org/2000/svg">
+   <line x1="0" y1="86" x2="220" y2="86" stroke="rgba(212,184,106,.40)" stroke-width="1"/>
+   <path d="M62 86 L160 86 L146 99 L76 99 Z" fill="#d4b86a"/>
+   <rect x="110" y="26" width="2.6" height="60" fill="#d4b86a"/>
+   <path d="M113 30 L113 82 L156 82 Z" fill="#d4b86a" opacity=".9"/>
+   <path d="M110 30 L110 82 L72 82 Z" fill="#bca057" opacity=".75"/>
+  </svg>
+ </div>
 </section>
+
+<style>
+.horizon-boat{position:absolute;left:50%;bottom:7%;transform:translateX(-50%);z-index:0;width:min(240px,46vw);opacity:.5;pointer-events:none;animation:boat-bob 6.5s ease-in-out infinite}
+.horizon-boat svg{width:100%;height:auto;display:block}
+@keyframes boat-bob{0%,100%{transform:translateX(-50%) translateY(0) rotate(-1.2deg)}50%{transform:translateX(-50%) translateY(-10px) rotate(1.2deg)}}
+.nav-logo,.footer-logo{background:rgba(248,242,228,.96);border-radius:50%;padding:5px}
+.about-photo{background:rgba(248,242,228,.96)!important}
+@media(max-width:880px){.horizon-boat{bottom:3%;opacity:.4;width:60vw}}
+</style>
 
 <!-- ===== STATS ===== -->
 <section class="stats">
@@ -282,11 +301,11 @@ h1.hero-h1 { font-family: var(--heading-font); font-weight: 900; font-size: clam
  <div class="section-label">// למה דווקא עכשיו</div>
  <h2>הלחץ הכלכלי הוא לא רק מספרים. הוא <span class="gold">איכות חיים, בריאות ושקט נפשי</span>.</h2>
 
- <p>משפחות וצעירים בקהילה מתמודדים עם יוקר מחיה, חוסר ודאות ותקופות משבר. עבור רבים, הכסף הפך ל<strong>מקור חרדה מתמשך</strong> - לא בגלל חוסר ידע בלבד, אלא בגלל תחושת חוסר שליטה.</p>
- <p>חוסן כלכלי הוא לא עוד הרצאה על חיסכון. הוא <em>שינוי ביחס לכסף</em> - מהישרדות לבחירה, משיתוק לתנועה. כשנותנים לאדם את הכלים והביטחון לקחת את ההגה, משתנים גם ההתנהלות, גם הזוגיות וגם ההורות.</p>
+ <p>משפחות וצעירים בקהילה מתמודדים עם יוקר מחיה ואי-ודאות - בתקופות משבר, אבל גם ברגעים של בלבול, שינוי, או רצון לצאת לדרך חדשה. עבור רבים, הכסף הפך ל<strong>מקור חרדה מתמשך</strong> - לא בגלל חוסר ידע בלבד, אלא בגלל תחושת חוסר שליטה.</p>
+ <p>חוסן כלכלי הוא לא עוד הרצאה על חיסכון. הוא <em>שינוי ביחס לכסף</em> - במקום התחושה שהחיים פשוט קורים לי, מתחילים להבין שיש לי את היד על ההגה, ושאני זו/זה שבוחר/ת את הכיוון. וכשזה קורה, משתנים גם ההתנהלות, גם הזוגיות וגם ההורות.</p>
 
  <div class="quote-block">
-  <div class="quote-text">"כסף הוא לא המטרה. הוא כלי - לחיים שאנחנו באמת רוצים."</div>
+  <div class="quote-text">כסף הוא לא המטרה. הוא כלי - לחיים שאנחנו באמת רוצים.</div>
   <div class="quote-attr">עינב ליבנה · בדרך שלך</div>
  </div>
 </section>
@@ -303,7 +322,7 @@ h1.hero-h1 { font-family: var(--heading-font); font-weight: 900; font-size: clam
     <div class="layer-emoji">🧠</div>
     <div class="layer-step">רובד 1</div>
     <div class="layer-h3">מיינדסט</div>
-    <div class="layer-text">לשנות את היחס לכסף - מפחד, בושה והימנעות, לבחירה ושליטה. עובדים על האמונות והדפוסים שמעצבים את ההתנהלות הכלכלית.</div>
+    <div class="layer-text">לשנות את היחס לכסף - בין אם זו חרדה, הימנעות או סתם בלבול - לעבר בהירות, ביטחון ובחירה. עובדים על האמונות והדפוסים שמעצבים את ההתנהלות הכלכלית.</div>
    </div>
    <div class="layer-card fadeup-ready" style="--delay:.1s">
     <div class="layer-emoji">📚</div>
@@ -381,7 +400,7 @@ h1.hero-h1 { font-family: var(--heading-font); font-weight: 900; font-size: clam
    <div class="light-eyebrow">// מי מעבירה</div>
    <h2 class="about-h2">עינב ליבנה</h2>
    <div class="about-role">מאמנת לחוסן כלכלי · אשת חינוך · מנחת קבוצות</div>
-   <p class="about-text">למעלה מ-<strong>20 שנות ניסיון</strong> בחינוך, בהובלת פרויקטים חברתיים ובעבודה קהילתית במועצה אזורית. מלווה אנשים לחזור לשליטה ולחלום - גם בתקופות משבר. הסדנה הקבוצתית נולדה מהפיילוט המוצלח <strong>"העתיד בידיים שלנו"</strong> בנעורי גבולות, ומבוססת על תהליך אימון אישי מוכח. בעלת עוסק מורשה, מקיבוץ גבולות.</p>
+   <p class="about-text">מעל <strong>20 שנה</strong> בחינוך, בהובלת פרויקטים חברתיים ובעבודה קהילתית במועצה אזורית. מלווה אנשים לחזור לשליטה ולחלום - גם בתקופות של אי-ודאות ומשבר. הסדנה הקבוצתית נולדה מפיילוט שהעברתי לבני נוער, <strong>"העתיד בידיים שלנו"</strong>, ומבוססת על תהליך אימון אישי מוכח. בעלת עוסק מורשה, מקיבוץ גבולות.</p>
   </div>
  </div>
 </section>
@@ -424,7 +443,7 @@ h1.hero-h1 { font-family: var(--heading-font); font-weight: 900; font-size: clam
 /* 2. TYPEWRITER */
 (function(){
  const el=document.getElementById('sub-promise-el'); if(!el) return;
- const fullHTML='סדנאות קבוצתיות ותהליכים אישיים לחוסן כלכלי, מותאמים לכל קהל בקהילה - <strong>מהמיינדסט, דרך הידע, אל</strong> <span class="warm">הפרקטיקה שמשנה התנהלות</span>.';
+ const fullHTML='סדנאות חוסן כלכלי ותהליכים אישיים, מותאמים לקהל שלכם - <strong>לנוער, למשפחות, לצוותים ולקהילה</strong>. <span class="warm">מי שמכירה את השטח מבפנים.</span>';
  function tokenize(html){const t=[];let i=0;while(i<html.length){if(html[i]==='<'){let j=html.indexOf('>',i);if(j===-1)j=html.length-1;t.push({type:'tag',value:html.slice(i,j+1)});i=j+1;}else{let j=html.indexOf('<',i);if(j===-1)j=html.length;t.push({type:'text',value:html.slice(i,j)});i=j;}}return t;}
  const tokens=tokenize(fullHTML);let rendered='',ti=0,ci=0,cur=null;
  function rc(){if(cur)cur.remove();cur=document.createElement('span');cur.className='tw-cursor';cur.style.height='1em';el.appendChild(cur);}
