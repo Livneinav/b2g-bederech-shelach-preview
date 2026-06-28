@@ -274,7 +274,7 @@ details.acc[open] summary .chev { transform: rotate(45deg); }
 <!-- STORY -->
 <section class="story" id="story-section">
  <div class="section-label">// למה דווקא עכשיו</div>
- <h2>הלחץ הכלכלי הוא לא רק מספרים. הוא <span class="gold">איכות חיים, בריאות ושקט נפשי</span>.</h2>
+ <h2>רוב האנשים לא צריכים עוד מידע על כסף. <span class="gold">הם צריכים להרגיש שיש להם כיוון.</span></h2>
  <p>החיים הכלכליים מאתגרים לא רק ברגעי משבר - גם בתקופות של בלבול וחוסר ודאות, לקראת שינוי, או כשפשוט רוצים לצאת לדרך חדשה. עבור רבים, הכסף הפך ל<strong>מקור חרדה מתמשך</strong> - לא בגלל חוסר ידע בלבד, אלא בגלל תחושת חוסר שליטה.</p>
  <p>חוסן כלכלי הוא לא עוד הרצאה על חיסכון. הוא <em>שינוי ביחס לכסף</em> - במקום התחושה שהחיים פשוט קורים לי, מתחילים להבין שיש לי את היד על ההגה, ושאני זו או זה שבוחר את הכיוון. וכשזה קורה, משתנים גם ההתנהלות, גם הזוגיות וגם ההורות.</p>
  <div class="statement-block">
@@ -457,7 +457,7 @@ function waLink(e){ if(e) e.preventDefault(); var msg='היי עינב, הגעת
 /* TYPEWRITER */
 (function(){
  const el=document.getElementById('sub-promise-el'); if(!el) return;
- const fullHTML='סדנאות חוסן כלכלי מותאמות לקהל שלכם - לנוער, למשפחות, לצוותים ולקהילה. <strong>עם מי שמכירה את השטח מבפנים</strong>, ומחזירה אנשים ל<span class="warm">שליטה, בהירות ויכולת לחלום</span>.';
+ const fullHTML='סדנאות חוסן כלכלי מותאמות לקהל שלכם - לנוער, למשפחות, לצוותים ולקהילה. <strong>עם מי שמכירה את השטח מבפנים</strong>, ובתהליך שבו אנשים לומדים, מרגישים שינוי, ו<span class="warm">חוזרים לאחוז בהגה</span>.';
  function tk(h){const t=[];let i=0;while(i<h.length){if(h[i]==='<'){let j=h.indexOf('>',i);if(j===-1)j=h.length-1;t.push({t:'tag',v:h.slice(i,j+1)});i=j+1;}else{let j=h.indexOf('<',i);if(j===-1)j=h.length;t.push({t:'txt',v:h.slice(i,j)});i=j;}}return t;}
  const tokens=tk(fullHTML);let r='',ti=0,ci=0,cur=null;
  function rc(){if(cur)cur.remove();cur=document.createElement('span');cur.className='tw-cursor';cur.style.height='1em';el.appendChild(cur);}
