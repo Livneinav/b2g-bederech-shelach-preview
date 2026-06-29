@@ -411,11 +411,29 @@ details.acc[open] summary .chev { transform: rotate(45deg); }
   <h2>בואו נבנה יחד <span class="gold">מתווה מותאם</span></h2>
   <p class="lead">שיחה קצרה כדי להבין את הצרכים של הקהילה, ולבנות הצעה מדויקת - קהל, מטרות ולוחות זמנים. בלי התחייבות.</p>
   <p class="contact-council">בתיאום עם: <b>שם האגף / הרשות</b></p>
-  <div class="contact-buttons">
-   <a href="#" onclick="waLink(event)" class="cbtn primary">💬 שיחה בוואטסאפ</a>
-   <a href="mailto:einav.livne@gmail.com?subject=סדנת חוסן כלכלי - רשות" class="cbtn ghost">✉️ שליחת מייל</a>
-   <a href="b2g-onepager.pdf" download class="cbtn ghost">📄 דף מידע להורדה (PDF)</a>
-  </div>
+  <style>
+   .lead-form{display:flex;flex-direction:column;gap:11px;max-width:430px;margin:8px auto 16px;}
+   .lf-in{width:100%;font:inherit;font-size:15px;color:#fff;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.18);border-radius:11px;padding:13px 15px;transition:border-color .15s,box-shadow .15s;}
+   .lf-in::placeholder{color:rgba(228,233,242,.55);}
+   .lf-in:focus{outline:none;border-color:var(--amber);box-shadow:0 0 0 3px rgba(212,184,106,.22);}
+   .lf-hp{position:absolute;left:-9999px;width:0;height:0;opacity:0;}
+   .lf-btn{font:inherit;font-size:16px;font-weight:800;color:#1a2744;background:linear-gradient(120deg,var(--orange),var(--amber));border:none;border-radius:12px;padding:15px;cursor:pointer;transition:filter .15s,transform .08s;}
+   .lf-btn:hover{filter:brightness(1.06);} .lf-btn:active{transform:translateY(1px);} .lf-btn:disabled{opacity:.6;cursor:default;}
+   .lf-note{font-size:13px;margin:2px 0 0;min-height:1px;}
+   .lf-note.err{color:#ff9a9a;}
+   .contact-alt{margin-top:4px;color:rgba(228,233,242,.7);font-size:14px;line-height:1.9;}
+   .contact-alt a{color:var(--amber);text-decoration:none;font-weight:600;}
+  </style>
+  <form class="lead-form" onsubmit="return submitLead(event,'סדנה / וובינר')">
+   <input class="lf-in" type="text" name="name" placeholder="שם איש/אשת הקשר" required>
+   <input class="lf-in" type="tel" name="phone" placeholder="טלפון" required>
+   <input class="lf-in" type="email" name="email" placeholder="אימייל (לא חובה)">
+   <input class="lf-in" type="text" name="message" placeholder="שם הרשות / הקהילה">
+   <input class="lf-hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+   <button class="lf-btn" type="submit">לתיאום שיחה ←</button>
+   <p class="lf-note" id="lfNote"></p>
+  </form>
+  <div class="contact-alt">מעדיפים לדבר עכשיו? <a href="#" onclick="waLink(event)">שלחו וואטסאפ ←</a> · <a href="mailto:einav.livne@gmail.com?subject=סדנת חוסן כלכלי - רשות">מייל</a> · <a href="b2g-onepager.pdf" download>דף מידע (PDF)</a></div>
   <div class="contact-direct">עינב ליבנה · <a href="tel:0547919111">054-791-9111</a> · <a href="mailto:einav.livne@gmail.com">einav.livne@gmail.com</a></div>
  </div>
 </section>
@@ -429,6 +447,24 @@ details.acc[open] summary .chev { transform: rotate(45deg); }
 
 <script>
 function waLink(e){ if(e) e.preventDefault(); var msg='היי עינב, הגעתי דרך דף הסדנאות לרשויות של "בדרך שלך". אשמח לתאם שיחה על סדנה לקהילה שלנו.'; window.open('https://wa.me/972552704742?text='+encodeURIComponent(msg),'_blank'); }
+async function submitLead(e,type){
+  e.preventDefault();
+  var f=e.target, note=f.querySelector('.lf-note'), btn=f.querySelector('.lf-btn');
+  note.className='lf-note'; note.textContent='';
+  var p={inquiry_type:type, want_result:true};
+  ['name','phone','email','message','company'].forEach(function(k){var el=f.querySelector('[name="'+k+'"]'); if(el) p[k]=el.value;});
+  btn.disabled=true; var orig=btn.textContent; btn.textContent='שולח...';
+  try{
+    var r=await fetch('https://bederech-shelach-form.your-way.workers.dev',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(p)});
+    var j=await r.json().catch(function(){return {ok:false};});
+    if(!j.ok) throw new Error(j.error||'failed');
+    f.innerHTML='<div style="text-align:center;padding:14px 4px;color:#fff;"><div style="font-size:36px;margin-bottom:8px;">✓</div><div style="font-size:20px;font-weight:800;margin-bottom:6px;">תודה! קיבלתי את הפרטים</div><div style="color:rgba(228,233,242,.82);font-size:15px;">אחזור אליכם.ן בהקדם.</div></div>';
+  }catch(err){
+    btn.disabled=false; btn.textContent=orig;
+    note.className='lf-note err'; note.textContent='משהו השתבש, נסו שוב או שלחו וואטסאפ.';
+  }
+  return false;
+}
 
 /* SCROLL PROGRESS */
 (function(){const bar=document.getElementById('scroll-progress');function u(){const s=window.scrollY||document.documentElement.scrollTop;const d=document.documentElement.scrollHeight-document.documentElement.clientHeight;bar.style.width=(d>0?(s/d)*100:0)+'%';}window.addEventListener('scroll',u,{passive:true});u();})();

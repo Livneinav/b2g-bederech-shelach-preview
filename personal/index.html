@@ -295,10 +295,29 @@ h1.hero-h1 { font-weight: 800; font-size: clamp(32px, 5vw, 58px); line-height: 1
   <div class="section-label" style="text-align:center">// הצעד הראשון</div>
   <h2>בואו ניפגש <span class="gold">לשיחת היכרות</span></h2>
   <p>נכיר, ונראה יחד אם זו הדרך שלך. בלי התחייבות.</p>
-  <div class="cbtns">
-   <a href="#" onclick="waLink(event)" class="cbtn primary">💬 שיחה בוואטסאפ</a>
-   <a href="mailto:einav.livne@gmail.com?subject=שיחת היכרות - ליווי אישי" class="cbtn ghost">✉️ שליחת מייל</a>
-  </div>
+  <style>
+   .lead-form{display:flex;flex-direction:column;gap:11px;max-width:430px;margin:8px auto 16px;}
+   .lf-in{width:100%;font:inherit;font-size:15px;color:#fff;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.18);border-radius:11px;padding:13px 15px;transition:border-color .15s,box-shadow .15s;}
+   .lf-in::placeholder{color:rgba(228,233,242,.55);}
+   .lf-in:focus{outline:none;border-color:var(--amber);box-shadow:0 0 0 3px rgba(212,184,106,.22);}
+   .lf-hp{position:absolute;left:-9999px;width:0;height:0;opacity:0;}
+   .lf-btn{font:inherit;font-size:16px;font-weight:800;color:#1a2744;background:linear-gradient(120deg,var(--orange),var(--amber));border:none;border-radius:12px;padding:15px;cursor:pointer;transition:filter .15s,transform .08s;}
+   .lf-btn:hover{filter:brightness(1.06);} .lf-btn:active{transform:translateY(1px);} .lf-btn:disabled{opacity:.6;cursor:default;}
+   .lf-note{font-size:13px;margin:2px 0 0;min-height:1px;}
+   .lf-note.err{color:#ff9a9a;}
+   .contact-alt{margin-top:4px;color:rgba(228,233,242,.7);font-size:14px;line-height:1.9;}
+   .contact-alt a{color:var(--amber);text-decoration:none;font-weight:600;}
+  </style>
+  <form class="lead-form" onsubmit="return submitLead(event,'תהליך אישי')">
+   <input class="lf-in" type="text" name="name" placeholder="שם מלא" required>
+   <input class="lf-in" type="tel" name="phone" placeholder="טלפון" required>
+   <input class="lf-in" type="email" name="email" placeholder="אימייל (לא חובה)">
+   <input class="lf-in" type="text" name="message" placeholder="מה מביא אותך לכאן? (לא חובה)">
+   <input class="lf-hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+   <button class="lf-btn" type="submit">השאירו פרטים ואחזור אליכם.ן ←</button>
+   <p class="lf-note" id="lfNote"></p>
+  </form>
+  <div class="contact-alt">מעדיפים לדבר עכשיו? <a href="#" onclick="waLink(event)">שלחו וואטסאפ ←</a> · <a href="mailto:einav.livne@gmail.com?subject=שיחת היכרות - ליווי אישי">מייל</a></div>
   <div class="contact-direct">עינב ליבנה · <a href="tel:0547919111">054-791-9111</a> · <a href="mailto:einav.livne@gmail.com">einav.livne@gmail.com</a></div>
  </div>
 </section>
@@ -311,6 +330,24 @@ h1.hero-h1 { font-weight: 800; font-size: clamp(32px, 5vw, 58px); line-height: 1
 
 <script>
 function waLink(e){ if(e) e.preventDefault(); var msg='היי עינב, הגעתי דרך הדף שלך. אשמח לתאם שיחת היכרות על תהליך אישי.'; window.open('https://wa.me/972552704742?text='+encodeURIComponent(msg),'_blank'); }
+async function submitLead(e,type){
+  e.preventDefault();
+  var f=e.target, note=f.querySelector('.lf-note'), btn=f.querySelector('.lf-btn');
+  note.className='lf-note'; note.textContent='';
+  var p={inquiry_type:type, want_result:true};
+  ['name','phone','email','message','company'].forEach(function(k){var el=f.querySelector('[name="'+k+'"]'); if(el) p[k]=el.value;});
+  btn.disabled=true; var orig=btn.textContent; btn.textContent='שולח...';
+  try{
+    var r=await fetch('https://bederech-shelach-form.your-way.workers.dev',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(p)});
+    var j=await r.json().catch(function(){return {ok:false};});
+    if(!j.ok) throw new Error(j.error||'failed');
+    f.innerHTML='<div style="text-align:center;padding:14px 4px;color:#fff;"><div style="font-size:36px;margin-bottom:8px;">✓</div><div style="font-size:20px;font-weight:800;margin-bottom:6px;">תודה! קיבלתי את הפרטים</div><div style="color:rgba(228,233,242,.82);font-size:15px;">אחזור אליכם.ן בהקדם.</div></div>';
+  }catch(err){
+    btn.disabled=false; btn.textContent=orig;
+    note.className='lf-note err'; note.textContent='משהו השתבש, נסו שוב או שלחו וואטסאפ.';
+  }
+  return false;
+}
 (function(){const b=document.getElementById('scroll-progress');function u(){const s=window.scrollY,d=document.documentElement.scrollHeight-document.documentElement.clientHeight;b.style.width=(d>0?s/d*100:0)+'%';}window.addEventListener('scroll',u,{passive:true});u();})();
 (function(){const el=document.getElementById('sub-promise-el');if(!el)return;const full='תהליך ליווי אישי לחוסן כלכלי, שמחזיר לך את היכולת <strong>להבין את הכסף</strong>, לבחור את הכיוון, ו<span class="warm">לבנות את הדרך אל החיים שאת.ה רוצה</span>.';function tk(h){const t=[];let i=0;while(i<h.length){if(h[i]==='<'){let j=h.indexOf('>',i);if(j===-1)j=h.length-1;t.push({t:'tag',v:h.slice(i,j+1)});i=j+1;}else{let j=h.indexOf('<',i);if(j===-1)j=h.length;t.push({t:'txt',v:h.slice(i,j)});i=j;}}return t;}const tok=tk(full);let r='',ti=0,ci=0,cur=null;function rc(){if(cur)cur.remove();cur=document.createElement('span');cur.className='tw-cursor';cur.style.height='1em';el.appendChild(cur);}function st(){if(ti>=tok.length){setTimeout(()=>{if(cur)cur.remove();},1500);return;}const k=tok[ti];if(k.t==='tag'){r+=k.v;ti++;ci=0;el.innerHTML=r;rc();setTimeout(st,8);}else{if(ci<k.v.length){r+=k.v[ci];ci++;el.innerHTML=r;rc();setTimeout(st,22);}else{ti++;ci=0;setTimeout(st,8);}}}setTimeout(st,900);})();
 (function(){const si=document.querySelector('.stats-inner');if(!si||!('IntersectionObserver' in window))return;let t=false;function eo(x){return 1-Math.pow(1-x,3);}function ac(el,tg,d){let s=null;function f(ts){if(!s)s=ts;const p=Math.min((ts-s)/d,1);el.textContent=Math.round(eo(p)*tg);if(p<1)requestAnimationFrame(f);else el.textContent=tg;}requestAnimationFrame(f);}const o=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting&&!t){t=true;o.disconnect();si.querySelectorAll('.stat-item').forEach(it=>{const n=it.querySelector('.stat-num'),tg=parseInt(n.getAttribute('data-target'),10),c=n.querySelector('.stat-countup');if(c&&!isNaN(tg))ac(c,tg,1400);});}});},{threshold:.3});o.observe(si);})();
